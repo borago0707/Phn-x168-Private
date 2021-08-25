@@ -1,0 +1,1056 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
+    android:textAlignment="center"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/HühnerfiletSpargel"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="芦笋鸡"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/garnelenScharf"
+        app:layout_constraintTop_toTopOf="@+id/Broccoli" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:text="Chicken Wings"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/ChickenWings"
+        app:layout_constraintTop_toBottomOf="@+id/ChickenWings" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:text="Curry Huhn"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/CurryHuhn"
+        app:layout_constraintTop_toBottomOf="@+id/Broccoli" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:text="Kung Pao"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/HühnerfilietKnoblauch"
+        app:layout_constraintTop_toBottomOf="@+id/Broccoli" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="125dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="1dp"
+        android:text="Hühner Knoblauch "
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/textBroccoli"
+        app:layout_constraintTop_toBottomOf="@+id/Broccoli" />
+
+    <TextView
+        android:id="@+id/textBroccoli"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:text="Broccoli "
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/Broccoli"
+        app:layout_constraintTop_toBottomOf="@+id/Broccoli" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:text="Omelett"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/omelett"
+        app:layout_constraintTop_toBottomOf="@+id/omelett" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:text="Ba Bao"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/AchtKostbarkeiten"
+        app:layout_constraintTop_toBottomOf="@+id/AchtKostbarkeiten" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="110dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:text="Rind Zwiebel"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/RindFleischZwiebel" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:text="Reis"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/Gebratener_Reis"
+        app:layout_constraintTop_toBottomOf="@+id/Gebratener_Reis" />
+
+    <Button
+        android:id="@+id/Gebackene_Ente"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="炸 鸭"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/bratkartoffeln"
+        app:layout_constraintTop_toTopOf="@+id/GebKäse" />
+
+
+    <Button
+        android:id="@+id/Gebratene_Nudeln"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="炒 面"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Gebratener_Reis"
+        app:layout_constraintTop_toTopOf="@+id/HühnerfiletSpargel" />
+
+
+    <Button
+        android:id="@+id/Gebratener_Reis"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="炒 饭"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/bratkartoffeln"
+        app:layout_constraintTop_toTopOf="@+id/garnelenScharf" />
+
+    <Button
+        android:id="@+id/Champignons"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="蘑 菇"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Bohen"
+        app:layout_constraintTop_toTopOf="@+id/HühnerfiletSpargel" />
+
+    <Button
+        android:id="@+id/Bohen"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="绿 豆"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/garnelenScharf"
+        app:layout_constraintTop_toTopOf="@+id/garnelenScharf" />
+
+    <Button
+        android:id="@+id/bratkartoffeln"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="土 豆"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/Bohen"
+        app:layout_constraintTop_toTopOf="@+id/garnelenScharf" />
+
+
+    <!-- fertig -->
+
+
+    <Button
+        android:id="@+id/ChickenWings"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="鸡 翅"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/RindFleischZwiebel"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="洋葱牛"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/ChickenWings"
+        app:layout_constraintTop_toTopOf="@+id/ChickenWings" />
+
+    <Button
+        android:id="@+id/AchtKostbarkeiten"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="八 宝"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/RindFleischZwiebel"
+        app:layout_constraintTop_toTopOf="@+id/ChickenWings" />
+
+    <Button
+        android:id="@+id/Broccoli"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="西兰花"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/ChickenWings"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <Button
+        android:id="@+id/omelett"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="蛋 饺"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/AchtKostbarkeiten"
+        app:layout_constraintTop_toTopOf="@+id/ChickenWings" />
+
+    <Button
+        android:id="@+id/HühnerfilietKnoblauch"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="豆豉鸡"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/RindFleischZwiebel"
+        app:layout_constraintTop_toTopOf="@+id/Broccoli" />
+
+    <Button
+        android:id="@+id/HühnerfleischKungbo"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="宫保鸡"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/AchtKostbarkeiten"
+        app:layout_constraintTop_toTopOf="@+id/Broccoli" />
+
+    <Button
+        android:id="@+id/CurryHuhn"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="咖喱鸡"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/omelett"
+        app:layout_constraintTop_toTopOf="@+id/Broccoli" />
+
+    <Button
+        android:id="@+id/Soße_Süßsauer"
+        android:layout_width="100dp"
+        android:layout_height="37dp"
+        android:background="@drawable/btn_extra"
+        android:text="甜酸汁"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Soß_Pikante"
+        app:layout_constraintTop_toBottomOf="@+id/textView37" />
+
+    <Button
+        android:id="@+id/Soße_Erdnuss"
+        android:layout_width="100dp"
+        android:layout_height="37dp"
+        android:background="@drawable/btn_extra"
+        android:text="花生汁"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/Gebackenes_Hähnchen"
+        app:layout_constraintStart_toStartOf="@+id/Soß_Pikante" />
+
+    <Button
+        android:id="@+id/Soß_Pikante"
+        android:layout_width="100dp"
+        android:layout_height="37dp"
+        android:background="@drawable/btn_extra"
+        android:text="黑  汁"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/Gebratene_Nudeln"
+        app:layout_constraintTop_toTopOf="@+id/GebKäse" />
+
+    <Button
+        android:id="@+id/Gebackenes_Hähnchen"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+
+        android:text="炸 鸡"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/bratkartoffeln"
+        app:layout_constraintTop_toTopOf="@+id/GebackeneHühnerFilet" />
+
+
+    <Button
+        android:id="@+id/ChickenNuggets"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="鸡 块"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Bohen"
+        app:layout_constraintTop_toTopOf="@+id/GebKäse" />
+
+    <Button
+        android:id="@+id/GebKäse"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="奶 酪"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/garnelenScharf"
+        app:layout_constraintTop_toTopOf="@+id/GebBanane" />
+
+    <Button
+        android:id="@+id/Unterlage"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_extra"
+        android:text="换 底"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/Suppe"
+        app:layout_constraintStart_toStartOf="@+id/Gebackenes_Hähnchen" />
+
+    <Button
+        android:id="@+id/Schalen_shao"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/btn_extra"
+        android:text="换铲"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/GebackeneGarnelen"
+        app:layout_constraintTop_toTopOf="@+id/Reis" />
+
+    <Button
+        android:id="@+id/Schalenklein"
+        android:layout_width="100dp"
+        android:layout_height="37dp"
+        android:background="@drawable/btn_extra"
+        android:text="换 兜"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Soße_Erdnuss"
+        app:layout_constraintTop_toTopOf="@+id/Unterlage" />
+
+    <Button
+        android:id="@+id/SchalenGroß"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_extra"
+        android:text="换 兜"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/Reis"
+        app:layout_constraintStart_toStartOf="@+id/GebackeneHühnerFilet" />
+
+    <Button
+        android:id="@+id/TintenfischRing"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="鱿 鱼"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/omelett"
+        app:layout_constraintTop_toTopOf="@+id/GebBanane" />
+
+    <Button
+        android:id="@+id/MiniFrühlingsrolle"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="小春卷"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/AchtKostbarkeiten"
+        app:layout_constraintTop_toTopOf="@+id/GebBanane" />
+
+    <Button
+        android:id="@+id/pommes"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="薯 条"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/RindFleischZwiebel"
+        app:layout_constraintTop_toTopOf="@+id/GebBanane" />
+
+    <Button
+        android:id="@+id/GebBanane"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="香 蕉"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Broccoli"
+        app:layout_constraintTop_toBottomOf="@+id/textBroccoli" />
+
+    <Button
+        android:id="@+id/GebackeneSesambällchen"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="芝麻球"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/RindFleischZwiebel"
+        app:layout_constraintTop_toTopOf="@+id/GebackeneAnanas" />
+
+    <Button
+        android:id="@+id/Gebackenesfischfilet"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="鱼 片"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/omelett"
+        app:layout_constraintTop_toTopOf="@+id/GebackeneAnanas" />
+
+    <Button
+        android:id="@+id/GebackeneGarnelen"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="炸 虾"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/garnelenScharf"
+        app:layout_constraintTop_toTopOf="@+id/GebackeneAnanas" />
+
+    <Button
+        android:id="@+id/GebackeneHühnerFilet"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="鸡 胸"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Bohen"
+        app:layout_constraintTop_toTopOf="@+id/GebackeneAnanas" />
+
+    <Button
+        android:id="@+id/GebackeneWantan"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="馄 饨"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/AchtKostbarkeiten"
+        app:layout_constraintTop_toTopOf="@+id/GebackeneAnanas" />
+
+    <Button
+        android:id="@+id/GebackeneAnanas"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="菠 萝"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/ChickenWings"
+        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+    <SeekBar
+        android:id="@+id/sb_GebEnte"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:max="5"
+        android:progress="0"
+        android:progressTint="@android:color/background_dark"
+        android:thumb="@android:color/background_dark"
+        android:thumbTint="#EBFFFFFF"
+        app:layout_constraintStart_toStartOf="@+id/Gebackene_Ente"
+        app:layout_constraintTop_toBottomOf="@+id/Gebackene_Ente" />
+
+    <SeekBar
+        android:id="@+id/sb_Unterlage"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:max="2"
+        android:progress="0"
+        android:progressTint="@android:color/background_dark"
+        android:thumb="@android:color/background_dark"
+        android:thumbTint="#EBFFFFFF"
+        app:layout_constraintStart_toStartOf="@+id/Unterlage"
+        app:layout_constraintTop_toTopOf="@+id/txtSchaleGroß" />
+
+    <SeekBar
+        android:id="@+id/sb_Schoko"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:longClickable="false"
+        android:max="4"
+        android:progress="0"
+        android:progressTint="@android:color/background_dark"
+        android:thumb="@android:color/background_dark"
+        android:thumbTint="#EBFFFFFF"
+        app:layout_constraintStart_toStartOf="@+id/textVSchoko"
+        app:layout_constraintTop_toBottomOf="@+id/Schoko" />
+
+    <SeekBar
+        android:id="@+id/sb_SchaleGroß"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="115dp"
+        android:layout_height="30dp"
+        android:max="7"
+        android:progress="0"
+        android:progressTint="@android:color/background_dark"
+        android:thumb="@android:color/background_dark"
+        android:thumbTint="#EBFFFFFF"
+        app:layout_constraintStart_toStartOf="@+id/SchalenGroß"
+        app:layout_constraintTop_toTopOf="@+id/txtSchaleGroß" />
+
+    <SeekBar
+        android:id="@+id/sb_Schaleklein"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:max="3"
+        android:progress="0"
+        android:progressTint="@android:color/background_dark"
+        android:thumb="@android:color/background_dark"
+        android:thumbTint="#EBFFFFFF"
+        app:layout_constraintStart_toStartOf="@+id/Schalenklein"
+        app:layout_constraintTop_toBottomOf="@+id/Schalenklein" />
+
+    <SeekBar
+        android:id="@+id/sb_GebHächenFilet"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:max="5"
+        android:progress="0"
+        android:progressTint="@android:color/background_dark"
+        android:thumb="@android:color/background_dark"
+        android:thumbTint="#EBFFFFFF"
+        app:layout_constraintStart_toStartOf="@+id/GebackeneHühnerFilet"
+        app:layout_constraintTop_toBottomOf="@+id/GebackeneHühnerFilet" />
+
+    <SeekBar
+        android:id="@+id/sb_Broccoli"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="116dp"
+        android:layout_height="45dp"
+        android:max="2"
+        android:progress="0"
+        android:progressTint="@android:color/background_dark"
+        android:thumb="@android:color/black"
+        android:thumbTint="#EBFFFFFF"
+        app:layout_constraintStart_toStartOf="@+id/textBroccoli"
+        app:layout_constraintTop_toBottomOf="@+id/Broccoli" />
+
+    <SeekBar
+        android:id="@+id/sb_GebHächen"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:max="5"
+        android:progress="0"
+        android:progressTint="@android:color/background_dark"
+        android:thumb="@android:color/background_dark"
+        android:thumbTint="#EBFFFFFF"
+        app:layout_constraintStart_toStartOf="@+id/Gebackenes_Hähnchen"
+        app:layout_constraintTop_toBottomOf="@+id/Gebackenes_Hähnchen" />
+
+    <Button
+        android:id="@+id/Reis"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/btn_extra"
+        android:text="白饭"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/ChickenWings"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <Button
+        android:id="@+id/btnOption"
+        android:layout_width="115dp"
+        android:layout_height="70dp"
+        android:background="@drawable/btn_extra2"
+        android:text="蒙古餐"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Gebackenesfischfilet"
+        app:layout_constraintTop_toTopOf="@+id/Reis" />
+
+    <Button
+        android:id="@+id/Schoko"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/btn_extra2"
+        android:text="巧克力"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/GebackeneWantan"
+        app:layout_constraintTop_toTopOf="@+id/Reis" />
+
+    <Button
+        android:id="@+id/Suppe"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/btn_extra"
+        android:text="酸辣汤"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/GebackeneSesambällchen"
+        app:layout_constraintTop_toTopOf="@+id/Reis" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:text="Süß-Sauer"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/Soße_Süßsauer"
+        app:layout_constraintTop_toBottomOf="@+id/Soße_Süßsauer" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:text="Pikante"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/Soß_Pikante"
+        app:layout_constraintTop_toBottomOf="@+id/Soß_Pikante" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:text="Erdnuss"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/Soße_Erdnuss"
+        app:layout_constraintTop_toBottomOf="@+id/Soße_Erdnuss" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:text="Nudeln"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/Gebratene_Nudeln"
+        app:layout_constraintTop_toBottomOf="@+id/Gebratene_Nudeln" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:text="Garnelen Scharf"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/garnelenScharf"
+        app:layout_constraintTop_toBottomOf="@+id/garnelenScharf" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:text="Suppe"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/Suppe"
+        app:layout_constraintTop_toBottomOf="@+id/Suppe" />
+
+    <TextView
+        android:id="@+id/txtMongolisch"
+        android:layout_width="115dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
+        android:text="Mongolisch"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/GebackeneWantan"
+        app:layout_constraintTop_toBottomOf="@+id/Schoko" />
+
+    <TextView
+        android:id="@+id/textVSchoko"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="52dp"
+        android:text="Schoko"
+        android:textAlignment="viewStart"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintTop_toTopOf="@+id/sb_Schoko" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:text="Reis"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/Reis"
+        app:layout_constraintTop_toBottomOf="@+id/Reis" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:text="Bohnen"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/Bohen"
+        app:layout_constraintTop_toBottomOf="@+id/Bohen" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:text="Kartoffeln"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/bratkartoffeln"
+        app:layout_constraintTop_toBottomOf="@+id/bratkartoffeln" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="110dp"
+        android:layout_height="45dp"
+        android:text="Gemüse"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/Geb_Gemüse"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/Geb_Gemüse" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:text="Hühner Spargel "
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/HühnerfiletSpargel"
+        app:layout_constraintTop_toBottomOf="@+id/HühnerfiletSpargel" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="125dp"
+        android:layout_height="45dp"
+        android:text="Champignons"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/HühnerfiletSpargel"
+        app:layout_constraintTop_toBottomOf="@+id/Champignons" />
+
+    <Button
+        android:id="@+id/garnelenScharf"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="大 虾"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/omelett"
+        app:layout_constraintTop_toTopOf="@+id/ChickenWings" />
+
+    <TextView
+        android:id="@+id/txtEnte"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:text="Ente"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/Gebackene_Ente"
+        app:layout_constraintTop_toBottomOf="@+id/Gebackene_Ente" />
+
+    <TextView
+        android:id="@+id/txtHähchen"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:text="Hähnchen"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/Gebackenes_Hähnchen"
+        app:layout_constraintTop_toBottomOf="@+id/Gebackenes_Hähnchen" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:text="Banane"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/GebBanane"
+        app:layout_constraintTop_toBottomOf="@+id/GebBanane" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="110dp"
+        android:layout_height="45dp"
+        android:text="Mini-Rolle"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/MiniFrühlingsrolle"
+        app:layout_constraintTop_toBottomOf="@+id/MiniFrühlingsrolle" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:text="Tintenfisch"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/MiniFrühlingsrolle"
+        app:layout_constraintStart_toStartOf="@+id/TintenfischRing"
+        app:layout_constraintTop_toBottomOf="@+id/TintenfischRing" />
+
+    <TextView
+        android:id="@+id/txtUnterlage"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:text="Unterlagen"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView33"
+        app:layout_constraintStart_toStartOf="@+id/Unterlage" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="-1dp"
+        android:text="Schaufel"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/Schalen_shao"
+        app:layout_constraintTop_toBottomOf="@+id/Schalen_shao" />
+
+    <TextView
+        android:id="@+id/txtSchaleKlein"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:text="Schalen"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/sb_Schaleklein"
+        app:layout_constraintTop_toTopOf="@+id/sb_Schaleklein" />
+
+    <TextView
+        android:id="@+id/txtSchaleGroß"
+        android:layout_width="115dp"
+        android:layout_height="30dp"
+        android:text="Schalen"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtMongolisch"
+        app:layout_constraintStart_toStartOf="@+id/SchalenGroß" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:text="Chicken Nuggets"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/ChickenNuggets"
+        app:layout_constraintTop_toBottomOf="@+id/ChickenNuggets" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:text="Käse"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/GebKäse"
+        app:layout_constraintTop_toBottomOf="@+id/GebKäse" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="110dp"
+        android:layout_height="45dp"
+        android:text="Pommes"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/pommes"
+        app:layout_constraintTop_toBottomOf="@+id/pommes" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="110dp"
+        android:layout_height="30dp"
+        android:text="Ananas"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/GebackeneAnanas"
+        app:layout_constraintTop_toBottomOf="@+id/GebackeneAnanas" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:text="Sesambällchen"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/GebackeneSesambällchen" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="110dp"
+        android:layout_height="30dp"
+        android:text="Wantan"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/GebackeneWantan"
+        app:layout_constraintTop_toBottomOf="@+id/GebackeneWantan" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="115dp"
+        android:layout_height="30dp"
+        android:text="Fischfilet"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/Gebackenesfischfilet"
+        app:layout_constraintTop_toBottomOf="@+id/Gebackenesfischfilet" />
+
+    <TextView
+        android:id="@+id/txtHühnerFilet"
+        android:layout_width="115dp"
+        android:layout_height="40dp"
+        android:text="Hühnerfilet"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/GebackeneHühnerFilet"
+        app:layout_constraintTop_toBottomOf="@+id/GebackeneHühnerFilet" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="115dp"
+        android:layout_height="30dp"
+        android:text="Garnelen"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/GebackeneGarnelen"
+        app:layout_constraintTop_toBottomOf="@+id/GebackeneGarnelen" />
+
+    <Button
+        android:id="@+id/Geb_Gemüse"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_press_switch"
+        android:text="素 菜"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/bratkartoffeln"
+        app:layout_constraintTop_toTopOf="@+id/HühnerfiletSpargel" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="360dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/phnix"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
