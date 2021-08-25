@@ -483,7 +483,7 @@ public class MainActivity extends AppCompatActivity {
                     btnGebackeneHühnerFilet.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
                 }
                 else{btnGebackeneHühnerFilet.setText("鸡胸 " + progress);
-                     txtHühnerfilet.setText("Hühnerfilet: " + progress);
+                    // txtHühnerfilet.setText("Hühnerfilet: " + progress);
                      btnGebackeneHühnerFilet.setHovered(true);
                     btnGebackeneHühnerFilet.setActivated(false);
                     btnGebackeneHühnerFilet.setSelected(false);
