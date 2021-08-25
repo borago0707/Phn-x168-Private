@@ -335,7 +335,7 @@ public class MainActivity extends AppCompatActivity {
                 btnGebEnte.setHovered(false);
                 btnGebEnte.setActivated(false);
                 btnGebEnte.setSelected(false);
-                btnGebEnte.setBackground(getDrawable(R.drawable.btn_press_switch)); //---------------
+                btnGebEnte.setBackground(getDrawable(R.drawable.btn_press_switch_berate)); //---------------
             }
 
             else{btnGebEnte.setText("炸鸭 " + progress);
@@ -343,7 +343,7 @@ public class MainActivity extends AppCompatActivity {
                 btnGebEnte.setHovered(true);
                 btnGebEnte.setActivated(false);
                 btnGebEnte.setSelected(false);
-                btnGebEnte.setBackground(getDrawable(R.drawable.blue_press));   //---------------
+                btnGebEnte.setBackground(getDrawable(R.drawable.blue_press_berate));   //---------------
 
             }
         }
@@ -369,11 +369,11 @@ public class MainActivity extends AppCompatActivity {
         else if (btnGebEnte.isSelected()==true||btnGebEnte.isHovered()==true){
             btnGebEnte.setSelected(false);
             btnGebEnte.setHovered(false);
-            btnGebEnte.setBackground(getDrawable(R.drawable.btn_press_switch));
+            btnGebEnte.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
             sb_GebEnte.setProgress(0);
         }
-        else if (sb_GebEnte.getBackground()==getDrawable(R.drawable.blue_press))
-        {sb_GebEnte.setBackground(getDrawable(R.drawable.btn_press_switch));}
+        else if (sb_GebEnte.getBackground()==getDrawable(R.drawable.blue_press_berate))
+        {sb_GebEnte.setBackground(getDrawable(R.drawable.btn_press_switch_berate));}
         else { btnGebEnte.setActivated(true);
         }
     }
@@ -383,7 +383,7 @@ public class MainActivity extends AppCompatActivity {
         public boolean onLongClick(View v){
             vibrator.vibrate(100);
             btnGebEnte.setHovered(true);
-            btnGebEnte.setBackground(getDrawable(R.drawable.blue_press));
+            btnGebEnte.setBackground(getDrawable(R.drawable.blue_press_berate));
             btnGebEnte.setSelected(false);
             btnGebEnte.setActivated(false);
             sb_GebEnte.setProgress(2);     // one click by Default Number is 2
@@ -404,8 +404,7 @@ public class MainActivity extends AppCompatActivity {
                     btnGebHänchen.setHovered(false);
                     btnGebHänchen.setActivated(false);
                     btnGebHänchen.setSelected(false);
-
-                    btnGebHänchen.setBackground(getDrawable(R.drawable.btn_press_switch));
+                    btnGebHänchen.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
 
                 }
 /*                else if(sb_GebHänchen.getProgress()==5){
@@ -417,7 +416,7 @@ public class MainActivity extends AppCompatActivity {
                     btnGebHänchen.setHovered(true);
                     btnGebHänchen.setActivated(false);
                     btnGebHänchen.setSelected(false);
-                    btnGebHänchen.setBackground(getDrawable(R.drawable.blue_press));
+                    btnGebHänchen.setBackground(getDrawable(R.drawable.blue_press_berate));
                     txtHähchen.setText("Hähnchen: " + progress);}
             }
             @Override
@@ -435,18 +434,18 @@ public class MainActivity extends AppCompatActivity {
                 if (btnGebHänchen.isActivated()==true ){
                     btnGebHänchen.setActivated(false);
                     btnGebHänchen.setHovered(false);
-                    btnGebHänchen.setBackground(getDrawable(R.drawable.btn_press_switch));
+                    btnGebHänchen.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
                     btnGebHänchen.setSelected(true);
                 }
                 else if (btnGebHänchen.isSelected()==true || btnGebHänchen.isHovered()==true){
                     btnGebHänchen.setSelected(false);
                     btnGebHänchen.setHovered(false);
-                    btnGebHänchen.setBackground(getDrawable(R.drawable.btn_press_switch));
+                    btnGebHänchen.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
                     sb_GebHänchen.setProgress(0);
                 }
-                else if (sb_GebHänchen.getBackground()==getDrawable(R.drawable.blue_press))
+                else if (sb_GebHänchen.getBackground()==getDrawable(R.drawable.blue_press_berate))
                 {
-                    sb_GebHänchen.setBackground(getDrawable(R.drawable.btn_press_switch));
+                    sb_GebHänchen.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
                 }
                 else { btnGebHänchen.setActivated(true);}
             }
@@ -456,7 +455,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onLongClick(View v){
                 vibrator.vibrate(100);
                 btnGebHänchen.setHovered(true);
-                btnGebHänchen.setBackground(getDrawable(R.drawable.blue_press));
+                btnGebHänchen.setBackground(getDrawable(R.drawable.blue_press_berate));
                 btnGebHänchen.setActivated(false);
                 btnGebHänchen.setSelected(false);
                 sb_GebHänchen.setProgress(2);
@@ -480,14 +479,14 @@ public class MainActivity extends AppCompatActivity {
                     btnGebackeneHühnerFilet.setHovered(false);
                     btnGebackeneHühnerFilet.setSelected(false);
                     btnGebackeneHühnerFilet.setActivated(false);
-                    btnGebackeneHühnerFilet.setBackground(getDrawable(R.drawable.btn_press_switch));
+                    btnGebackeneHühnerFilet.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
                 }
                 else{btnGebackeneHühnerFilet.setText("鸡胸 " + progress);
                      txtHühnerfilet.setText("Hühnerfilet: " + progress);
                      btnGebackeneHühnerFilet.setHovered(true);
                     btnGebackeneHühnerFilet.setActivated(false);
                     btnGebackeneHühnerFilet.setSelected(false);
-                     btnGebackeneHühnerFilet.setBackground(getDrawable(R.drawable.blue_press));
+                     btnGebackeneHühnerFilet.setBackground(getDrawable(R.drawable.blue_press_berate));
                     }
             }
             @Override
@@ -513,12 +512,12 @@ public class MainActivity extends AppCompatActivity {
                     sb_GebHänchenFilet.setProgress(0);
                     btnGebackeneHühnerFilet.setSelected(false);
                     btnGebackeneHühnerFilet.setHovered(false);
-                    btnGebackeneHühnerFilet.setBackground(getDrawable(R.drawable.btn_press_switch));
+                    btnGebackeneHühnerFilet.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
 
 
                 }
-                else if (sb_GebHänchenFilet.getBackground()==getDrawable(R.drawable.blue_press)){
-                    sb_GebHänchenFilet.setBackground(getDrawable(R.drawable.btn_press_switch));
+                else if (sb_GebHänchenFilet.getBackground()==getDrawable(R.drawable.blue_press_berate)){
+                    sb_GebHänchenFilet.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
                 }
                 else { btnGebackeneHühnerFilet.setActivated(true);}
             }
@@ -528,7 +527,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onLongClick(View v){
                 vibrator.vibrate(100);
                 btnGebackeneHühnerFilet.setHovered(true);
-                btnGebackeneHühnerFilet.setBackground(getDrawable(R.drawable.blue_press));
+                btnGebackeneHühnerFilet.setBackground(getDrawable(R.drawable.blue_press_berate));
                 btnGebackeneHühnerFilet.setActivated(false);
                 btnGebackeneHühnerFilet.setSelected(false);
                 sb_GebHänchenFilet.setProgress(2);
@@ -764,11 +763,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
         }
         else if(btnGebackeneAnanas.isHovered()==true)
         {  btnGebackeneAnanas.setHovered(false);
-            btnGebackeneAnanas.setBackground(getDrawable(R.drawable.btn_press_switch));
+            btnGebackeneAnanas.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
         }
-        else if (btnGebackeneAnanas.getBackground()==getDrawable(R.drawable.blue_press))
+        else if (btnGebackeneAnanas.getBackground()==getDrawable(R.drawable.blue_press_berate))
         {
-            btnGebackeneAnanas.setBackground(getDrawable(R.drawable.btn_press_switch));
+            btnGebackeneAnanas.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
         }
         else {
             btnGebackeneAnanas.setActivated(true);
@@ -782,9 +781,8 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             btnGebackeneAnanas.setActivated(false);
             btnGebackeneAnanas.setSelected(false);
             btnGebackeneAnanas.setHovered(true);
-            btnGebackeneAnanas.setBackground(getDrawable(R.drawable.blue_press));
-
-                return true;
+            btnGebackeneAnanas.setBackground(getDrawable(R.drawable.blue_press_berate));
+            return true;
             }
         });
 
@@ -948,11 +946,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             }
             else if(btnChickenWings.isHovered()==true)
             {  btnChickenWings.setHovered(false);
-                btnChickenWings.setBackground(getDrawable(R.drawable.btn_press_switch));
+                btnChickenWings.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
             }
-            else if (btnChickenWings.getBackground()==getDrawable(R.drawable.blue_press))
+            else if (btnChickenWings.getBackground()==getDrawable(R.drawable.blue_press_berate))
             {
-                btnChickenWings.setBackground(getDrawable(R.drawable.btn_press_switch));
+                btnChickenWings.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
             }
             else {
                 btnChickenWings.setActivated(true);
@@ -966,7 +964,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             btnChickenWings.setActivated(false);
             btnChickenWings.setSelected(false);
             btnChickenWings.setHovered(true);
-                btnChickenWings.setBackground(getDrawable(R.drawable.blue_press));
+            btnChickenWings.setBackground(getDrawable(R.drawable.blue_press_berate));
 
                 return true;
             }
@@ -1205,11 +1203,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
         }
         else if(btnGebKäse.isHovered()==true)
         {  btnGebKäse.setHovered(false);
-            btnGebKäse.setBackground(getDrawable(R.drawable.btn_press_switch));
+            btnGebKäse.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
         }
-        else if (btnGebKäse.getBackground()==getDrawable(R.drawable.blue_press))
+        else if (btnGebKäse.getBackground()==getDrawable(R.drawable.blue_press_berate))
         {
-            btnGebKäse.setBackground(getDrawable(R.drawable.btn_press_switch));
+            btnGebKäse.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
         }
         else {
             btnGebKäse.setActivated(true);
@@ -1223,9 +1221,8 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             btnGebKäse.setActivated(false);
             btnGebKäse.setSelected(false);
             btnGebKäse.setHovered(true);
-                btnGebKäse.setBackground(getDrawable(R.drawable.blue_press));
-
-                return true;
+            btnGebKäse.setBackground(getDrawable(R.drawable.blue_press_berate));
+            return true;
             }
         });
 //----------------------------------------炸大虾 fertig-----------------------------------------------//
@@ -1242,11 +1239,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             }
             else if(btnGebackeneGarnelen.isHovered()==true)
             {  btnGebackeneGarnelen.setHovered(false);
-                btnGebackeneGarnelen.setBackground(getDrawable(R.drawable.btn_press_switch));
+                btnGebackeneGarnelen.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
             }
-            else if (btnGebackeneGarnelen.getBackground()==getDrawable(R.drawable.blue_press))
+            else if (btnGebackeneGarnelen.getBackground()==getDrawable(R.drawable.blue_press_berate))
             {
-                btnGebackeneGarnelen.setBackground(getDrawable(R.drawable.btn_press_switch));
+                btnGebackeneGarnelen.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
             }
             else {
                 btnGebackeneGarnelen.setActivated(true);
@@ -1260,7 +1257,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             btnGebackeneGarnelen.setActivated(false);
             btnGebackeneGarnelen.setSelected(false);
             btnGebackeneGarnelen.setHovered(true);
-                btnGebackeneGarnelen.setBackground(getDrawable(R.drawable.blue_press));
+                btnGebackeneGarnelen.setBackground(getDrawable(R.drawable.blue_press_berate));
             return true;
             }
         });
@@ -1278,11 +1275,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             }
             else if(btnChickenNuggets.isHovered()==true)
             {  btnChickenNuggets.setHovered(false);
-                btnChickenNuggets.setBackground(getDrawable(R.drawable.btn_press_switch));
+                btnChickenNuggets.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
             }
-            else if (btnChickenNuggets.getBackground()==getDrawable(R.drawable.blue_press))
+            else if (btnChickenNuggets.getBackground()==getDrawable(R.drawable.blue_press_berate))
             {
-                btnChickenNuggets.setBackground(getDrawable(R.drawable.btn_press_switch));
+                btnChickenNuggets.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
             }
             else {
                 btnChickenNuggets.setActivated(true);
@@ -1296,7 +1293,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             btnChickenNuggets.setActivated(false);
             btnChickenNuggets.setSelected(false);
             btnChickenNuggets.setHovered(true);
-                btnChickenNuggets.setBackground(getDrawable(R.drawable.blue_press));
+            btnChickenNuggets.setBackground(getDrawable(R.drawable.blue_press_berate));
             return true;
             }
         });
@@ -1314,11 +1311,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             }
             else if(btnGebBanane.isHovered()==true)
             {  btnGebBanane.setHovered(false);
-                btnGebBanane.setBackground(getDrawable(R.drawable.btn_press_switch));
+                btnGebBanane.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
             }
-            else if (btnGebBanane.getBackground()==getDrawable(R.drawable.blue_press))
+            else if (btnGebBanane.getBackground()==getDrawable(R.drawable.blue_press_berate))
             {
-                btnGebBanane.setBackground(getDrawable(R.drawable.btn_press_switch));
+                btnGebBanane.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
             }
             else {
                 btnGebBanane.setActivated(true);
@@ -1332,7 +1329,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             btnGebBanane.setActivated(false);
             btnGebBanane.setSelected(false);
             btnGebBanane.setHovered(true);
-                btnGebBanane.setBackground(getDrawable(R.drawable.blue_press));
+            btnGebBanane.setBackground(getDrawable(R.drawable.blue_press_berate));
             return true;
             }
         });
@@ -1351,11 +1348,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             }
             else if(btnpommes.isHovered()==true)
             {  btnpommes.setHovered(false);
-                btnpommes.setBackground(getDrawable(R.drawable.btn_press_switch));
+                btnpommes.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
             }
-            else if (btnpommes.getBackground()==getDrawable(R.drawable.blue_press))
+            else if (btnpommes.getBackground()==getDrawable(R.drawable.blue_press_berate))
             {
-                btnpommes.setBackground(getDrawable(R.drawable.btn_press_switch));
+                btnpommes.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
             }
             else {
                 btnpommes.setActivated(true);
@@ -1369,7 +1366,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             btnpommes.setActivated(false);
             btnpommes.setSelected(false);
             btnpommes.setHovered(true);
-                btnpommes.setBackground(getDrawable(R.drawable.blue_press));
+                btnpommes.setBackground(getDrawable(R.drawable.blue_press_berate));
             return true;
             }
         });
@@ -1389,11 +1386,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             }
             else if(btnTintenfischRing.isHovered()==true)
             {  btnTintenfischRing.setHovered(false);
-                btnTintenfischRing.setBackground(getDrawable(R.drawable.btn_press_switch));
+                btnTintenfischRing.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
             }
-            else if (btnTintenfischRing.getBackground()==getDrawable(R.drawable.blue_press))
+            else if (btnTintenfischRing.getBackground()==getDrawable(R.drawable.blue_press_berate))
             {
-                btnTintenfischRing.setBackground(getDrawable(R.drawable.btn_press_switch));
+                btnTintenfischRing.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
             }
             else {
                 btnTintenfischRing.setActivated(true);
@@ -1407,9 +1404,9 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             btnTintenfischRing.setActivated(false);
             btnTintenfischRing.setSelected(false);
             btnTintenfischRing.setHovered(true);
-                btnTintenfischRing.setBackground(getDrawable(R.drawable.blue_press));
+            btnTintenfischRing.setBackground(getDrawable(R.drawable.blue_press_berate));
 
-                return true;
+            return true;
             }
         });
 //---------------------------------------- 炸鱼- fertig----------------------------------------------//
@@ -1426,11 +1423,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             }
             else if(btnGebackenesfischfilet.isHovered()==true)
             {  btnGebackenesfischfilet.setHovered(false);
-                btnGebackenesfischfilet.setBackground(getDrawable(R.drawable.btn_press_switch));
+                btnGebackenesfischfilet.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
             }
-            else if (btnGebackenesfischfilet.getBackground()==getDrawable(R.drawable.blue_press))
+            else if (btnGebackenesfischfilet.getBackground()==getDrawable(R.drawable.blue_press_berate))
             {
-                btnGebackenesfischfilet.setBackground(getDrawable(R.drawable.btn_press_switch));
+                btnGebackenesfischfilet.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
             }
             else {
                 btnGebackenesfischfilet.setActivated(true);
@@ -1444,7 +1441,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             btnGebackenesfischfilet.setActivated(false);
             btnGebackenesfischfilet.setSelected(false);
             btnGebackenesfischfilet.setHovered(true);
-                btnGebackenesfischfilet.setBackground(getDrawable(R.drawable.blue_press));
+            btnGebackenesfischfilet.setBackground(getDrawable(R.drawable.blue_press_berate));
             return true;
             }
         });
@@ -1463,11 +1460,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             }
             else if(btnMiniFrühlingsrolle.isHovered()==true)
             {  btnMiniFrühlingsrolle.setHovered(false);
-                btnMiniFrühlingsrolle.setBackground(getDrawable(R.drawable.btn_press_switch));
+                btnMiniFrühlingsrolle.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
             }
-            else if (btnMiniFrühlingsrolle.getBackground()==getDrawable(R.drawable.blue_press))
+            else if (btnMiniFrühlingsrolle.getBackground()==getDrawable(R.drawable.blue_press_berate))
             {
-                btnMiniFrühlingsrolle.setBackground(getDrawable(R.drawable.btn_press_switch));
+                btnMiniFrühlingsrolle.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
             }
             else {
                 btnMiniFrühlingsrolle.setActivated(true);
@@ -1481,9 +1478,9 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             btnMiniFrühlingsrolle.setActivated(false);
             btnMiniFrühlingsrolle.setSelected(false);
             btnMiniFrühlingsrolle.setHovered(true);
-                btnMiniFrühlingsrolle.setBackground(getDrawable(R.drawable.blue_press));
+            btnMiniFrühlingsrolle.setBackground(getDrawable(R.drawable.blue_press_berate));
 
-                return true;
+            return true;
             }
         });
 
@@ -1502,11 +1499,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             }
             else if(btnGebackeneWantan.isHovered()==true)
             {  btnGebackeneWantan.setHovered(false);
-                btnGebackeneWantan.setBackground(getDrawable(R.drawable.btn_press_switch));
+                btnGebackeneWantan.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
             }
-            else if (btnGebackeneWantan.getBackground()==getDrawable(R.drawable.blue_press))
+            else if (btnGebackeneWantan.getBackground()==getDrawable(R.drawable.blue_press_berate))
             {
-                btnGebackeneWantan.setBackground(getDrawable(R.drawable.btn_press_switch));
+                btnGebackeneWantan.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
             }
             else {
                 btnGebackeneWantan.setActivated(true);
@@ -1517,7 +1514,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
         btnGebackeneWantan.setOnLongClickListener(new View.OnLongClickListener(){
             public boolean onLongClick(View v){
             vibrator.vibrate(100);
-                btnGebackeneWantan.setBackground(getDrawable(R.drawable.blue_press));
+            btnGebackeneWantan.setBackground(getDrawable(R.drawable.blue_press_berate));
             btnGebackeneWantan.setActivated(false);
             btnGebackeneWantan.setSelected(false);
             btnGebackeneWantan.setHovered(true);
@@ -1540,11 +1537,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             }
             else if(btnGebackeneSesambällchen.isHovered()==true)
             {  btnGebackeneSesambällchen.setHovered(false);
-                btnGebackeneSesambällchen.setBackground(getDrawable(R.drawable.btn_press_switch));
+                btnGebackeneSesambällchen.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
             }
-            else if (btnGebackeneSesambällchen.getBackground()==getDrawable(R.drawable.blue_press))
+            else if (btnGebackeneSesambällchen.getBackground()==getDrawable(R.drawable.blue_press_berate))
             {
-                btnGebackeneSesambällchen.setBackground(getDrawable(R.drawable.btn_press_switch));
+                btnGebackeneSesambällchen.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
             }
             else {
                 btnGebackeneSesambällchen.setActivated(true);
@@ -1558,7 +1555,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             btnGebackeneSesambällchen.setActivated(false);
             btnGebackeneSesambällchen.setSelected(false);
             btnGebackeneSesambällchen.setHovered(true);
-                btnGebackeneSesambällchen.setBackground(getDrawable(R.drawable.blue_press));
+            btnGebackeneSesambällchen.setBackground(getDrawable(R.drawable.blue_press_berate));
 
                 return true;
             }
