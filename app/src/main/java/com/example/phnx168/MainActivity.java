@@ -339,7 +339,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             else{btnGebEnte.setText("炸鸭 " + progress);
-                txtEnte.setText("Enten: " + progress);
+                //txtEnte.setText("Enten: " + progress);
                 btnGebEnte.setHovered(true);
                 btnGebEnte.setActivated(false);
                 btnGebEnte.setSelected(false);
@@ -417,7 +417,8 @@ public class MainActivity extends AppCompatActivity {
                     btnGebHänchen.setActivated(false);
                     btnGebHänchen.setSelected(false);
                     btnGebHänchen.setBackground(getDrawable(R.drawable.blue_press_berate));
-                    txtHähchen.setText("Hähnchen: " + progress);}
+                    //txtHähchen.setText("Hähnchen: " + progress);
+                    }
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
@@ -1770,7 +1771,8 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                     btnSchoko.setActivated(false);
                     btnSchoko.setSelected(false);
                     btnSchoko.setBackground(getDrawable(R.drawable.btn_press_switch));
-                    txtSchoko.setText("Schoko:" + progress);}
+                    //txtSchoko.setText("Schoko:" + progress);
+                }
                     //      btnSchalen_shao.setActivated(true);
                 }
 
@@ -1878,14 +1880,14 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             @Override
             public void onProgressChanged (SeekBar seekBar,int progress, boolean fromUser){
                 if(sb_Unterlage.getProgress()==0){
-                    txtUnterlage.setText("Unterlagen");
+                    //txtUnterlage.setText("Unterlagen");
                     btnUnterlage.setText("换 底");
                     btnUnterlage.setActivated(false);
                 }
                 else{
                     btnUnterlage.setText("空底 " + progress);
                     btnUnterlage.setActivated(true);
-                    txtUnterlage.setText("Unterlagen:"+progress);
+                    //txtUnterlage.setText("Unterlagen:"+progress);
                     btnUnterlage.setActivated(true);
                 }
             }
@@ -1937,14 +1939,14 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             public void onProgressChanged (SeekBar seekBar,int progress, boolean fromUser){
                 //btnSchalenGroß.setTextSize(32);
                 if(sb_SchaleGroß.getProgress()==0){
-                    txtSchaleGroß.setText("Schalen");
+                    //txtSchaleGroß.setText("Schalen");
                     btnSchalenGroß.setText("换 兜");
                     btnSchalenGroß.setActivated(false);
                 }
                 else{
                     btnSchalenGroß.setText("餐兜 " + progress);
                     btnSchalenGroß.setActivated(true);
-                    txtSchaleGroß.setText("Schalen: " + progress);
+                    //txtSchaleGroß.setText("Schalen: " + progress);
                     //      btnSchalen_shao.setActivated(true);
                 }
             }
