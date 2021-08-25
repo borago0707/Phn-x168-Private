@@ -1844,8 +1844,8 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                     txtSchalenklein.setText("Schalen");
                 }
                 else{
-                    btnSchalenklein.setText("汁水兜" + sb_Schaleklein.getProgress());
-                    txtSchalenklein.setText("Schalen: "+sb_Schaleklein.getProgress());
+                    btnSchalenklein.setText("汁兜 " + sb_Schaleklein.getProgress());
+                    //txtSchalenklein.setText("Schalen: "+sb_Schaleklein.getProgress());
                     btnSchalenklein.setActivated(true);
                     btnSchalenklein.setActivated(true);
                 }
