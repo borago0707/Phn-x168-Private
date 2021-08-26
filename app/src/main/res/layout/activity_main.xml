@@ -386,7 +386,7 @@
         app:layout_constraintTop_toTopOf="@+id/Reis" />
 
     <Button
-        android:id="@+id/Schalenklein"
+        android:id="@+id/btnSchalenklein"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:background="@drawable/btn_extra"
@@ -574,7 +574,7 @@
         android:progressTint="@android:color/background_dark"
         android:thumb="@android:color/background_dark"
         android:thumbTint="#EBFFFFFF"
-        app:layout_constraintStart_toEndOf="@+id/txtMongolisch"
+        app:layout_constraintStart_toEndOf="@+id/txtOption"
         app:layout_constraintTop_toTopOf="@+id/txtSchaleGroß" />
 
     <SeekBar
@@ -589,7 +589,7 @@
         android:thumb="@android:color/background_dark"
         android:thumbTint="#EBFFFFFF"
         app:layout_constraintStart_toEndOf="@+id/Unterlage"
-        app:layout_constraintTop_toBottomOf="@+id/Schalenklein" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSchalenklein" />
 
     <SeekBar
         android:id="@+id/sb_GebHächenFilet"
@@ -701,7 +701,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Soß_Pikante" />
 
     <TextView
-        android:id="@+id/textView38"
+        android:id="@+id/txtErdnuss"
         android:layout_width="94dp"
         android:layout_height="29dp"
         android:layout_marginStart="5dp"
@@ -747,7 +747,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Suppe" />
 
     <TextView
-        android:id="@+id/txtMongolisch"
+        android:id="@+id/txtOption"
         android:layout_width="70dp"
         android:layout_height="30dp"
         android:layout_marginStart="5dp"
@@ -929,7 +929,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Schalen_shao" />
 
     <TextView
-        android:id="@+id/txtSchaleKlein"
+        android:id="@+id/txtMongolisch"
         android:layout_width="125dp"
         android:layout_height="46dp"
         android:text="Schalen Soße"
@@ -937,7 +937,7 @@
         android:textColor="@color/color1"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Unterlage"
-        app:layout_constraintTop_toBottomOf="@+id/Schalenklein" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSchalenklein" />
 
     <TextView
         android:id="@+id/txtSchaleGroß"

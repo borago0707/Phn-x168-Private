@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/background_dark"
+    android:foregroundTint="#EA80FC"
     android:textAlignment="center"
     tools:context=".MainActivity">
 
@@ -305,7 +306,7 @@
         android:id="@+id/Soße_Erdnuss"
         android:layout_width="100dp"
         android:layout_height="37dp"
-        android:background="@drawable/btn_extra"
+        android:background="@drawable/btn_extra2"
         android:text="花生汁"
         android:textSize="27sp"
         android:textStyle="bold"
@@ -374,25 +375,23 @@
         android:id="@+id/Schalen_shao"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginEnd="3dp"
         android:background="@drawable/btn_extra"
         android:text="换铲"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/GebackeneGarnelen"
-        app:layout_constraintEnd_toStartOf="@+id/SchalenGroß"
+        app:layout_constraintStart_toStartOf="@+id/GebackeneGarnelen"
         app:layout_constraintTop_toTopOf="@+id/Reis" />
 
     <Button
-        android:id="@+id/Schalenklein"
-        android:layout_width="100dp"
-        android:layout_height="37dp"
-        android:background="@drawable/btn_extra"
-        android:text="换 兜"
-        android:textSize="27sp"
+        android:id="@+id/btnSchalenklein"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/btn_extra2"
+        android:text="蒙古餐"
+        android:textSize="26sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/Soße_Erdnuss"
-        app:layout_constraintTop_toTopOf="@+id/Unterlage" />
+        app:layout_constraintBottom_toBottomOf="@+id/Reis"
+        app:layout_constraintStart_toStartOf="@+id/Gebackenesfischfilet" />
 
     <Button
         android:id="@+id/SchalenGroß"
@@ -569,19 +568,6 @@
         app:layout_constraintTop_toTopOf="@+id/txtSchaleGroß" />
 
     <SeekBar
-        android:id="@+id/sb_Schaleklein"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
-        android:max="3"
-        android:progress="0"
-        android:progressTint="@android:color/background_dark"
-        android:thumb="@android:color/background_dark"
-        android:thumbTint="#EBFFFFFF"
-        app:layout_constraintStart_toStartOf="@+id/Schalenklein"
-        app:layout_constraintTop_toBottomOf="@+id/Schalenklein" />
-
-    <SeekBar
         android:id="@+id/sb_GebHächenFilet"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="120dp"
@@ -633,14 +619,14 @@
 
     <Button
         android:id="@+id/btnOption"
-        android:layout_width="115dp"
-        android:layout_height="70dp"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
         android:background="@drawable/btn_extra2"
-        android:text="蒙古餐"
+        android:text="待定"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/Gebackenesfischfilet"
-        app:layout_constraintTop_toTopOf="@+id/Reis" />
+        app:layout_constraintBottom_toBottomOf="@+id/Unterlage"
+        app:layout_constraintEnd_toEndOf="@+id/Soße_Erdnuss" />
 
     <Button
         android:id="@+id/Schoko"
@@ -687,7 +673,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Soß_Pikante" />
 
     <TextView
-        android:id="@+id/textView38"
+        android:id="@+id/txtErdnuss"
         android:layout_width="100dp"
         android:layout_height="25dp"
         android:text="Erdnuss"
@@ -731,22 +717,21 @@
         app:layout_constraintTop_toBottomOf="@+id/Suppe" />
 
     <TextView
-        android:id="@+id/txtMongolisch"
-        android:layout_width="115dp"
+        android:id="@+id/txtOption"
+        android:layout_width="110dp"
         android:layout_height="30dp"
-        android:layout_marginStart="5dp"
-        android:text="Mongolisch"
+        android:text="Option"
         android:textAlignment="center"
         android:textColor="@color/color1"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/GebackeneWantan"
-        app:layout_constraintTop_toBottomOf="@+id/Schoko" />
+        app:layout_constraintStart_toStartOf="@+id/btnOption"
+        app:layout_constraintTop_toBottomOf="@+id/btnOption" />
 
     <TextView
         android:id="@+id/textVSchoko"
         android:layout_width="120dp"
         android:layout_height="30dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="25dp"
         android:text="Schoko"
         android:textAlignment="center"
         android:textColor="@color/color1"
@@ -904,24 +889,24 @@
         android:id="@+id/textView24"
         android:layout_width="80dp"
         android:layout_height="30dp"
-        android:layout_marginStart="45dp"
         android:text="Schaufel"
         android:textAlignment="center"
         android:textColor="@color/color1"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/btnOption"
+        app:layout_constraintStart_toEndOf="@+id/Gebackenesfischfilet"
         app:layout_constraintTop_toBottomOf="@+id/Schalen_shao" />
 
     <TextView
-        android:id="@+id/txtSchaleKlein"
-        android:layout_width="100dp"
+        android:id="@+id/txtMongolisch"
+        android:layout_width="105dp"
         android:layout_height="30dp"
-        android:text="Schalen"
+        android:layout_marginStart="5dp"
+        android:text="Mongolisch"
         android:textAlignment="center"
         android:textColor="@color/color1"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/sb_Schaleklein"
-        app:layout_constraintTop_toTopOf="@+id/sb_Schaleklein" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView33"
+        app:layout_constraintStart_toEndOf="@+id/textVSchoko" />
 
     <TextView
         android:id="@+id/txtSchaleGroß"
@@ -931,7 +916,7 @@
         android:textAlignment="center"
         android:textColor="@color/color1"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtMongolisch"
+        app:layout_constraintBottom_toBottomOf="@+id/textView33"
         app:layout_constraintStart_toStartOf="@+id/SchalenGroß" />
 
     <TextView

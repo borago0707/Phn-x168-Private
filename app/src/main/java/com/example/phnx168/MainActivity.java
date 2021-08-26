@@ -17,9 +17,6 @@ import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.view.HapticFeedbackConstants;
-import android.widget.Toast;
-import java.util.Timer;
 
 public class MainActivity extends AppCompatActivity {
     private int clickNum = 0;
@@ -30,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnGebackeneGarnelen, btnChickenNuggets, btnGebBanane, btnpommes,btnTintenfischRing;
     private Button btnGebackenesfischfilet,btnMiniFrühlingsrolle, btnGebackeneWantan, btnGebackeneSesambällchen;
     private Button btnSoß_Pikante, btnSoß_Süßsauer,btnSoße_Erdnuss, btnReis, btnSuppe, btnSchoko,btnSchalenklein, btnSchalenGroß, btnUnterlage;
-    private TextView txtMongolisch,txtSchalenklein, txtSchaleGroß,txtUnterlage, btnSchalen_shao,btnOption,txtEnte, txtHähchen, txtHühnerfilet, txtBroccoli, txtSchoko;
+    private TextView txtMongolisch,txtSchaleGroß,txtErdnuss, txtUnterlage, btnSchalen_shao,btnOption,txtEnte, txtHähchen, txtHühnerfilet,txtOption,txtBroccoli, txtSchoko;
     private SeekBar sb_GebEnte, sb_GebHänchen, sb_GebHänchenFilet,sb_Broccoli, sb_SchaleGroß,sb_Unterlage,sb_Schaleklein,sb_Schoko;
     private Context txt_sb_GebEnte, txt_sb_GebHänchen, txt_sb_GebHänchenFilet,txt_sb_Broccoli;// for the Toast when SeekBar move
     private Vibrator vibrator;
@@ -108,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
 //----------------------------------------Test Button-----------------------------------------------------------------------------------------//
         btnOption= (Button) findViewById(R.id.btnOption);
-        /**/txtMongolisch = (TextView) findViewById(R.id.txtMongolisch);
+        /**/txtOption = (TextView) findViewById(R.id.txtOption);
 /*        btnOption.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View v) {
@@ -166,18 +163,22 @@ public class MainActivity extends AppCompatActivity {
                         if (clickNum == 1) {
                             Log.d("btn listener:", "btn is clicked!");
                             if (btnOption.isActivated()==true){
-                                btnOption.setText("寿 司");
-                                txtMongolisch.setText("Sushi");
+                                btnOption.setText("剁椒");
+                                txtOption.setText("Chili");
                                 btnOption.setActivated(false);
                                 btnOption.setSelected(true);
                             }
                             else if (btnOption.isSelected()==true){
-                                btnOption.setText("蒙古餐");
-                                txtMongolisch.setText("Mongolisch");
+                                btnOption.setText("待定");
+                                txtOption.setText("Option");
                                 btnOption.setSelected(false);
                             }
                             else if(btnOption.isHovered()==true)
-                            {btnOption.setHovered(false);}
+                            {btnOption.setHovered(false);
+                                btnOption.setText("待定");
+                                txtOption.setText("Option");
+
+                            }
                             else {
                                 btnOption.setActivated(true);
                             }
@@ -386,7 +387,7 @@ public class MainActivity extends AppCompatActivity {
             btnGebEnte.setBackground(getDrawable(R.drawable.blue_press_berate));
             btnGebEnte.setSelected(false);
             btnGebEnte.setActivated(false);
-            sb_GebEnte.setProgress(2);     // one click by Default Number is 2
+            sb_GebEnte.setProgress(3);     // one click by Default Number is 2
             return true;
         }
     });
@@ -459,7 +460,7 @@ public class MainActivity extends AppCompatActivity {
                 btnGebHänchen.setBackground(getDrawable(R.drawable.blue_press_berate));
                 btnGebHänchen.setActivated(false);
                 btnGebHänchen.setSelected(false);
-                sb_GebHänchen.setProgress(2);
+                sb_GebHänchen.setProgress(3);
                 return true;
             }
         });
@@ -531,7 +532,7 @@ public class MainActivity extends AppCompatActivity {
                 btnGebackeneHühnerFilet.setBackground(getDrawable(R.drawable.blue_press_berate));
                 btnGebackeneHühnerFilet.setActivated(false);
                 btnGebackeneHühnerFilet.setSelected(false);
-                sb_GebHänchenFilet.setProgress(2);
+                sb_GebHänchenFilet.setProgress(3);
                 return true;
             }
         });
@@ -1639,19 +1640,26 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
 //---------------------------------------- 花生汁 fertig---------------------------------------------//
 
         btnSoße_Erdnuss= (Button) findViewById(R.id.Soße_Erdnuss);
+
+        txtErdnuss = (TextView) findViewById(R.id.txtErdnuss);
         btnSoße_Erdnuss.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View v) {
             if (btnSoße_Erdnuss.isActivated()==true){
                 btnSoße_Erdnuss.setActivated(false);
                 btnSoße_Erdnuss.setSelected(true);
+                txtErdnuss.setText("Schale");
+                btnSoße_Erdnuss.setText("汁水兜");
             }
             else if (btnSoße_Erdnuss.isSelected()==true){
                 btnSoße_Erdnuss.setSelected(false);
+                txtErdnuss.setText("Erdnuss");
+                btnSoße_Erdnuss.setText("花生汁");
+
             }
             else if(btnSoße_Erdnuss.isHovered()==true)
             {  btnSoße_Erdnuss.setHovered(false);
-                btnSoße_Erdnuss.setBackground(getDrawable(R.drawable.btn_extra));
+                btnSoße_Erdnuss.setBackground(getDrawable(R.drawable.btn_extra2));
             }
             else if (btnSoße_Erdnuss.getBackground()==getDrawable(R.drawable.btn_extra_blue))
             {
@@ -1669,7 +1677,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             btnSoße_Erdnuss.setActivated(false);
             btnSoße_Erdnuss.setSelected(false);
             btnSoße_Erdnuss.setHovered(true);
-                btnSoße_Erdnuss.setBackground(getDrawable(R.drawable.btn_extra_blue));
+            btnSoße_Erdnuss.setBackground(getDrawable(R.drawable.btn_extra_blue));
 
                 return true;
             }
@@ -1832,44 +1840,37 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
         });
 
 
-//----------------------------------------空兜小--------------------------------------------//
+//----------------------------------------Mongolisch--------------------------------------------//
         sb_Schaleklein = (SeekBar) findViewById(R.id.sb_Schaleklein);
-        txtSchalenklein = (TextView) findViewById(R.id.txtSchaleKlein);
-        sb_Schaleklein.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
-            @Override
-            public void onProgressChanged (SeekBar seekBar,int progress, boolean fromUser){
-                if(sb_Schaleklein.getProgress()==0){
-                    btnSchalenklein.setActivated(false);
-                    btnSchalenklein.setText("换 兜");
-                    txtSchalenklein.setText("Schalen");
-                }
-                else{
-                    btnSchalenklein.setText("汁兜 " + sb_Schaleklein.getProgress());
-                    //txtSchalenklein.setText("Schalen: "+sb_Schaleklein.getProgress());
-                    btnSchalenklein.setActivated(true);
-                    btnSchalenklein.setActivated(true);
-                }
-            }
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar){
-/*
-                Toast.makeText(txt_sb_GebHänchen,"Achtung!  Gebackene Hähnchen ...Gebackene Hähnchen ...Hähnchen", Toast.LENGTH_LONG).show();
-*/
-            }
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-            }
-        });
-        btnSchalenklein = (Button) findViewById(R.id.Schalenklein);
+        txtMongolisch = (TextView) findViewById(R.id.txtMongolisch);
+        btnSchalenklein = (Button) findViewById(R.id.btnSchalenklein);
         btnSchalenklein.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View v) {
                 if (btnSchalenklein.isActivated()==true){
                     btnSchalenklein.setActivated(false);
-                    sb_Schaleklein.setProgress(0);
+                    btnSchalenklein.setSelected(true);
+                    btnSchalenklein.setText("寿 司");
+                    txtMongolisch.setText("Suschi");
+
                 }
-                else {btnSchalenklein.setActivated(true);
-                    sb_Schaleklein.setProgress(1);
+                else if (btnSchalenklein.isSelected()==true){
+                    btnSchalenklein.setSelected(false);
+                    btnSchalenklein.setText("蒙古餐");
+                    txtMongolisch.setText("Mongolisch");
+
+                }
+                else if(btnSchalenklein.isHovered()==true)
+                {   btnSchalenklein.setHovered(false);
+                    sb_Schaleklein.setProgress(0);
+                    btnSchalenklein.setBackground(getDrawable(R.drawable.btn_extra2));
+                }
+                else if (btnSchalenklein.getBackground()==getDrawable(R.drawable.btn_extra_blue))
+                {
+                    btnSchalenklein.setBackground(getDrawable(R.drawable.btn_extra_blue));
+                }
+                else {
+                    btnSchalenklein.setActivated(true);
                 }
             }
         });
@@ -1885,7 +1886,8 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                     btnUnterlage.setActivated(false);
                 }
                 else{
-                    btnUnterlage.setText("空底 " + progress);
+                    //btnUnterlage.setText("空 底 " + progress);
+                    btnUnterlage.setText("空 底");
                     btnUnterlage.setActivated(true);
                     //txtUnterlage.setText("Unterlagen:"+progress);
                     btnUnterlage.setActivated(true);
