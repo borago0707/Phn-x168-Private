@@ -10,6 +10,28 @@
     tools:context=".MainActivity">
 
 
+    <SeekBar
+        android:id="@+id/sb_Curry"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:max="1"
+        android:progressTint="@android:color/background_dark"
+        android:thumb="@color/design_default_color_background"
+        android:thumbTint="@android:color/background_dark"
+        app:layout_constraintStart_toEndOf="@+id/HühnerfleischKungbo"
+        app:layout_constraintTop_toTopOf="@+id/txtCurry" />
+
+    <SeekBar
+        android:id="@+id/sb_Sesam"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:max="1"
+        android:progressTint="@android:color/background_dark"
+        android:thumb="@color/design_default_color_background"
+        android:thumbTint="@android:color/background_dark"
+        app:layout_constraintStart_toStartOf="@+id/GebackeneSesambällchen"
+        app:layout_constraintTop_toBottomOf="@+id/GebackeneSesambällchen" />
+
     <Button
         android:id="@+id/HühnerfiletSpargel"
         android:layout_width="115dp"
@@ -33,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ChickenWings" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/txtCurry"
         android:layout_width="115dp"
         android:layout_height="45dp"
         android:text="Curry Huhn"
@@ -100,15 +122,14 @@
         app:layout_constraintTop_toBottomOf="@+id/AchtKostbarkeiten" />
 
     <TextView
-        android:id="@+id/textView16"
-        android:layout_width="110dp"
+        android:id="@+id/textRind"
+        android:layout_width="115dp"
         android:layout_height="45dp"
-        android:layout_marginStart="8dp"
         android:text="Rind Zwiebel"
         android:textAlignment="center"
         android:textColor="@color/color1"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintStart_toStartOf="@+id/RindFleischZwiebel"
         app:layout_constraintTop_toBottomOf="@+id/RindFleischZwiebel" />
 
     <TextView
@@ -364,23 +385,23 @@
         android:id="@+id/Unterlage"
         android:layout_width="120dp"
         android:layout_height="60dp"
-        android:background="@drawable/btn_extra"
+        android:background="@drawable/btn_press_switch"
         android:text="换 底"
-        android:textSize="30sp"
+        android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/Suppe"
         app:layout_constraintStart_toStartOf="@+id/Gebackenes_Hähnchen" />
 
     <Button
         android:id="@+id/Schalen_shao"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:background="@drawable/btn_extra"
         android:text="换铲"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/GebackeneGarnelen"
-        app:layout_constraintTop_toTopOf="@+id/Reis" />
+        app:layout_constraintEnd_toEndOf="@+id/GebackeneGarnelen"
+        app:layout_constraintTop_toTopOf="@+id/SchalenGroß" />
 
     <Button
         android:id="@+id/btnSchalenklein"
@@ -893,7 +914,7 @@
         android:textAlignment="center"
         android:textColor="@color/color1"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Gebackenesfischfilet"
+        app:layout_constraintEnd_toEndOf="@+id/Schalen_shao"
         app:layout_constraintTop_toBottomOf="@+id/Schalen_shao" />
 
     <TextView
@@ -964,7 +985,7 @@
         app:layout_constraintTop_toBottomOf="@+id/GebackeneAnanas" />
 
     <TextView
-        android:id="@+id/textView29"
+        android:id="@+id/txtSesam"
         android:layout_width="140dp"
         android:layout_height="30dp"
         android:text="Sesambällchen"
@@ -1038,6 +1059,17 @@
         android:background="@drawable/phnix"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/sb_Rind"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:max="1"
+        android:progressTint="@android:color/background_dark"
+        android:thumb="@color/design_default_color_background"
+        android:thumbTint="@android:color/background_dark"
+        app:layout_constraintStart_toStartOf="@+id/RindFleischZwiebel"
+        app:layout_constraintTop_toTopOf="@+id/textRind" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -32,7 +32,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ChickenWings" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/txtCurry"
         android:layout_width="115dp"
         android:layout_height="50dp"
         android:text="\nCurry Huhn"
@@ -101,7 +101,7 @@
         app:layout_constraintTop_toBottomOf="@+id/AchtKostbarkeiten" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/textRind"
         android:layout_width="110dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
@@ -996,7 +996,7 @@
         app:layout_constraintTop_toBottomOf="@+id/GebackeneAnanas" />
 
     <TextView
-        android:id="@+id/textView29"
+        android:id="@+id/txtSesam"
         android:layout_width="140dp"
         android:layout_height="50dp"
         android:text="Gebackene Sesambällchen"

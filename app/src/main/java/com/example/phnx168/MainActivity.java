@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private Button btnGebackeneGarnelen, btnChickenNuggets, btnGebBanane, btnpommes,btnTintenfischRing;
     private Button btnGebackenesfischfilet,btnMiniFrühlingsrolle, btnGebackeneWantan, btnGebackeneSesambällchen;
     private Button btnSoß_Pikante, btnSoß_Süßsauer,btnSoße_Erdnuss, btnReis, btnSuppe, btnSchoko,btnSchalenklein, btnSchalenGroß, btnUnterlage;
-    private TextView txtMongolisch,txtSchaleGroß,txtErdnuss, txtUnterlage, btnSchalen_shao,btnOption,txtEnte, txtHähchen, txtHühnerfilet,txtOption,txtBroccoli, txtSchoko;
-    private SeekBar sb_GebEnte, sb_GebHänchen, sb_GebHänchenFilet,sb_Broccoli, sb_SchaleGroß,sb_Unterlage,sb_Schaleklein,sb_Schoko;
+    private TextView txtSesam,txtCurry,txtRind,txtMongolisch,txtSchaleGroß,txtErdnuss, txtUnterlage, btnSchalen_shao,btnOption,txtEnte, txtHähchen, txtHühnerfilet,txtOption,txtBroccoli, txtSchoko;
+    private SeekBar sb_Sesam,sb_Curry,sb_Rind, sb_GebEnte, sb_GebHänchen, sb_GebHänchenFilet,sb_Broccoli, sb_SchaleGroß,sb_Unterlage,sb_Schaleklein,sb_Schoko;
     private Context txt_sb_GebEnte, txt_sb_GebHänchen, txt_sb_GebHänchenFilet,txt_sb_Broccoli;// for the Toast when SeekBar move
     private Vibrator vibrator;
 //------------------------------------------------------------------------------------------------------------------------------------//
@@ -44,11 +44,8 @@ public class MainActivity extends AppCompatActivity {
         }
         //-------------------------------------------------------------------------------------
         setContentView(R.layout.activity_main);
-
-
         if (getSupportActionBar() != null){getSupportActionBar().hide();} //取消标题栏
         vibrator=(Vibrator)getSystemService(Service.VIBRATOR_SERVICE); //获取系统的Vibrator服务
-
         // 按键抖动
         final Animation animation = new AlphaAnimation(1, 0); // Change alpha from fully visible to invisible
                 animation.setDuration(500); // duration - half a second
@@ -68,8 +65,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-
-
 
 //----------------------------------------Test Button-----------------------------------------------------------------------------------------//
         btnOption= (Button) findViewById(R.id.btnOption);
@@ -586,7 +581,6 @@ public class MainActivity extends AppCompatActivity {
                     btnBroccoli.setSelected(false);
                     btnBroccoli.setHovered(false);
                     btnBroccoli.setBackground(getDrawable(R.drawable.btn_press_switch));
-
                     sb_Broccoli.setProgress(0);
                 }
                 else if (btnBroccoli.getBackground()==getDrawable(R.drawable.blue_press))
@@ -972,6 +966,43 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             }
         });
 //----------------------------------------洋葱牛 fertig-----------------------------------------------//
+       /* txt_sb_Rind = this;*/
+        sb_Rind = (SeekBar) findViewById(R.id.sb_Rind);
+        txtRind = (TextView) findViewById(R.id.textRind);
+        sb_Rind.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+            @Override
+            public void onProgressChanged (SeekBar seekBar,int progress, boolean fromUser){
+                if(btnRindFleischZwiebel.isSelected()!=true &&btnRindFleischZwiebel.isHovered()!=true) {
+                    btnRindFleischZwiebel.setActivated(true);
+                }
+
+                if (sb_Rind.getProgress()==1){
+                    txtRind.setText("Zwiebel");
+                    btnRindFleischZwiebel.setText("洋 葱");
+                }
+
+/*                if(sb_Broccoli.getProgress()==2)
+                {
+                    btnRindFleischZwiebel.setText("白菜花");
+                    txtBroccoli.setText("Blumenkohl");
+                }*/
+                if(sb_Rind.getProgress()==0){
+                    txtRind.setText("Rind Zwiebel");
+                    btnRindFleischZwiebel.setText("洋葱牛");
+                    btnRindFleischZwiebel.setHovered(false);
+                    btnRindFleischZwiebel.setBackground(getDrawable(R.drawable.btn_press_switch));
+                    btnRindFleischZwiebel.setActivated(false);
+                    btnRindFleischZwiebel.setSelected(false);
+                }
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar){
+            }
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
         btnRindFleischZwiebel= (Button) findViewById(R.id.RindFleischZwiebel);
         btnRindFleischZwiebel.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -980,12 +1011,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                 btnRindFleischZwiebel.setActivated(false);
                 btnRindFleischZwiebel.setSelected(true);
             }
-            else if (btnRindFleischZwiebel.isSelected()==true){
+            else if (btnRindFleischZwiebel.isSelected()==true||btnRindFleischZwiebel.isHovered()==true){
                 btnRindFleischZwiebel.setSelected(false);
-            }
-            else if(btnRindFleischZwiebel.isHovered()==true)
-            {  btnRindFleischZwiebel.setHovered(false);
+                btnRindFleischZwiebel.setHovered(false);
                 btnRindFleischZwiebel.setBackground(getDrawable(R.drawable.btn_press_switch));
+                sb_Rind.setProgress(0);
             }
             else if (btnRindFleischZwiebel.getBackground()==getDrawable(R.drawable.blue_press))
             {
@@ -1004,8 +1034,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             btnRindFleischZwiebel.setSelected(false);
             btnRindFleischZwiebel.setHovered(true);
             btnRindFleischZwiebel.setBackground(getDrawable(R.drawable.blue_press));
-
-                return true;
+            return true;
             }
         });
 //----------------------------------------豆豉鸡 fertig----------------------------------------------//
@@ -1155,6 +1184,42 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             }
         });
 //----------------------------------------咖喱鸡 fertig-----------------------------------------------//
+        sb_Curry = (SeekBar) findViewById(R.id.sb_Curry);
+        txtCurry = (TextView) findViewById(R.id.txtCurry);
+        sb_Curry.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+            @Override
+            public void onProgressChanged (SeekBar seekBar,int progress, boolean fromUser){
+                if(btnCurryHuhn.isSelected()!=true &&btnCurryHuhn.isHovered()!=true) {
+                    btnCurryHuhn.setActivated(true);
+                }
+
+                if (sb_Curry.getProgress()==1){
+                    txtCurry.setText("Curry Soße");
+                    btnCurryHuhn.setText("咖喱汁");
+                }
+
+/*                if(sb_Broccoli.getProgress()==2)
+                {
+                    btnRindFleischZwiebel.setText("白菜花");
+                    txtBroccoli.setText("Blumenkohl");
+                }*/
+                if(sb_Curry.getProgress()==0){
+                    txtCurry.setText("Curry Huhn");
+                    btnCurryHuhn.setText("咖喱鸡");
+                    btnCurryHuhn.setHovered(false);
+                    btnCurryHuhn.setBackground(getDrawable(R.drawable.btn_press_switch));
+                    btnCurryHuhn.setActivated(false);
+                    btnCurryHuhn.setSelected(false);
+                }
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar){
+            }
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
         btnCurryHuhn= (Button) findViewById(R.id.CurryHuhn);
         btnCurryHuhn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -1163,12 +1228,18 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                 btnCurryHuhn.setActivated(false);
                 btnCurryHuhn.setSelected(true);
             }
-            else if (btnCurryHuhn.isSelected()==true){
+            else if (btnCurryHuhn.isSelected()==true||btnCurryHuhn.isHovered()==true){
                 btnCurryHuhn.setSelected(false);
+                btnCurryHuhn.setHovered(false);
+                btnCurryHuhn.setBackground(getDrawable(R.drawable.btn_press_switch));
+                sb_Curry.setProgress(0);
+
             }
             else if(btnCurryHuhn.isHovered()==true)
-            {  btnCurryHuhn.setHovered(false);
+            {   btnCurryHuhn.setSelected(false);
+                btnCurryHuhn.setHovered(false);
                 btnCurryHuhn.setBackground(getDrawable(R.drawable.btn_press_switch));
+                sb_Curry.setProgress(0);
             }
             else if (btnCurryHuhn.getBackground()==getDrawable(R.drawable.blue_press))
             {
@@ -1186,9 +1257,8 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             btnCurryHuhn.setActivated(false);
             btnCurryHuhn.setSelected(false);
             btnCurryHuhn.setHovered(true);
-                btnCurryHuhn.setBackground(getDrawable(R.drawable.blue_press));
-
-                return true;
+            btnCurryHuhn.setBackground(getDrawable(R.drawable.blue_press));
+            return true;
             }
         });
 //----------------------------------------炸奶酪 fertig-----------------------------------------------//
@@ -1525,6 +1595,39 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
         });
 
 //---------------------------------------- 芝麻球-fertig--------------------------------------------//
+        sb_Sesam = (SeekBar) findViewById(R.id.sb_Sesam);
+        txtSesam = (TextView) findViewById(R.id.txtSesam);
+        sb_Sesam.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+            @Override
+            public void onProgressChanged (SeekBar seekBar,int progress, boolean fromUser){
+                if(btnGebackeneSesambällchen.isSelected()!=true &&btnGebackeneSesambällchen.isHovered()!=true) {
+                    btnGebackeneSesambällchen.setActivated(true);
+                }
+
+                if (sb_Sesam.getProgress()==1){
+                    txtSesam.setText("10 bällchen");
+                    btnGebackeneSesambällchen.setText("10个球");
+                    btnGebackeneSesambällchen.setHovered(true);
+                    btnGebackeneSesambällchen.setActivated(false);
+                    btnGebackeneSesambällchen.setSelected(false);
+                    btnGebackeneSesambällchen.setBackground(getDrawable(R.drawable.blue_press_berate));
+                }
+                if(sb_Sesam.getProgress()==0){
+                    txtSesam.setText("Sesambällchen");
+                    btnGebackeneSesambällchen.setText("芝麻球");
+                    btnGebackeneSesambällchen.setHovered(false);
+                    btnGebackeneSesambällchen.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
+                    btnGebackeneSesambällchen.setActivated(false);
+                    btnGebackeneSesambällchen.setSelected(false);
+                }
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar){
+            }
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
 
         btnGebackeneSesambällchen= (Button) findViewById(R.id.GebackeneSesambällchen);
         btnGebackeneSesambällchen.setOnClickListener(new View.OnClickListener(){
@@ -1536,10 +1639,15 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             }
             else if (btnGebackeneSesambällchen.isSelected()==true){
                 btnGebackeneSesambällchen.setSelected(false);
-            }
-            else if(btnGebackeneSesambällchen.isHovered()==true)
-            {  btnGebackeneSesambällchen.setHovered(false);
+                btnGebackeneSesambällchen.setHovered(false);
                 btnGebackeneSesambällchen.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
+                sb_Sesam.setProgress(0);
+            }
+            else if(btnGebackeneSesambällchen.isHovered()==true||btnGebackeneSesambällchen.isHovered()==true)
+            {  btnGebackeneSesambällchen.setHovered(false);
+                btnGebackeneSesambällchen.setSelected(false);
+                btnGebackeneSesambällchen.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
+                sb_Sesam.setProgress(0);
             }
             else if (btnGebackeneSesambällchen.getBackground()==getDrawable(R.drawable.blue_press_berate))
             {
@@ -1649,7 +1757,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                 btnSoße_Erdnuss.setActivated(false);
                 btnSoße_Erdnuss.setSelected(true);
                 txtErdnuss.setText("Schale");
-                btnSoße_Erdnuss.setText("汁水兜");
+                btnSoße_Erdnuss.setText("换 兜");
             }
             else if (btnSoße_Erdnuss.isSelected()==true){
                 btnSoße_Erdnuss.setSelected(false);
