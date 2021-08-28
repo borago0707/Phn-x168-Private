@@ -545,12 +545,21 @@ public class MainActivity extends AppCompatActivity {
                 if (sb_Broccoli.getProgress()==1){
                     txtBroccoli.setText("Broccoli");
                     btnBroccoli.setText("绿菜花");
+                    btnBroccoli.setTextSize(28);
+                    btnBroccoli.setHovered(true);
+                    btnBroccoli.setActivated(false);
+                    btnBroccoli.setSelected(false);
+
                 }
 
                 if(sb_Broccoli.getProgress()==2)
                 {
                     btnBroccoli.setText("白菜花");
                     txtBroccoli.setText("Blumenkohl");
+                    btnBroccoli.setTextSize(28);
+                    btnBroccoli.setHovered(true);
+                    btnBroccoli.setActivated(false);
+                    btnBroccoli.setSelected(false);
                 }
                 if(sb_Broccoli.getProgress()==0){
                     txtBroccoli.setText("Broccoli");
@@ -559,6 +568,7 @@ public class MainActivity extends AppCompatActivity {
                     btnBroccoli.setBackground(getDrawable(R.drawable.btn_press_switch));
                     btnBroccoli.setActivated(false);
                     btnBroccoli.setSelected(false);
+                    btnBroccoli.setTextSize(36);
                 }
             }
             @Override
@@ -979,6 +989,10 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                 if (sb_Rind.getProgress()==1){
                     txtRind.setText("Zwiebel");
                     btnRindFleischZwiebel.setText("洋 葱");
+                    btnRindFleischZwiebel.setTextSize(28);
+                    btnRindFleischZwiebel.setActivated(false);
+                    btnRindFleischZwiebel.setSelected(false);
+                    btnRindFleischZwiebel.setHovered(true);
                 }
 
 /*                if(sb_Broccoli.getProgress()==2)
@@ -989,6 +1003,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                 if(sb_Rind.getProgress()==0){
                     txtRind.setText("Rind Zwiebel");
                     btnRindFleischZwiebel.setText("洋葱牛");
+                    btnRindFleischZwiebel.setTextSize(36);
                     btnRindFleischZwiebel.setHovered(false);
                     btnRindFleischZwiebel.setBackground(getDrawable(R.drawable.btn_press_switch));
                     btnRindFleischZwiebel.setActivated(false);
@@ -1196,6 +1211,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                 if (sb_Curry.getProgress()==1){
                     txtCurry.setText("Curry Soße");
                     btnCurryHuhn.setText("咖喱汁");
+                    btnCurryHuhn.setTextSize(28);
+
+                    btnCurryHuhn.setActivated(false);
+                    btnCurryHuhn.setSelected(false);
+                    btnCurryHuhn.setHovered(true);
                 }
 
 /*                if(sb_Broccoli.getProgress()==2)
@@ -1206,10 +1226,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                 if(sb_Curry.getProgress()==0){
                     txtCurry.setText("Curry Huhn");
                     btnCurryHuhn.setText("咖喱鸡");
-                    btnCurryHuhn.setHovered(false);
+                    btnCurryHuhn.setTextSize(36);
                     btnCurryHuhn.setBackground(getDrawable(R.drawable.btn_press_switch));
                     btnCurryHuhn.setActivated(false);
                     btnCurryHuhn.setSelected(false);
+                    btnCurryHuhn.setHovered(false);
                 }
             }
             @Override
@@ -1644,7 +1665,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                 sb_Sesam.setProgress(0);
             }
             else if(btnGebackeneSesambällchen.isHovered()==true||btnGebackeneSesambällchen.isHovered()==true)
-            {  btnGebackeneSesambällchen.setHovered(false);
+            {   btnGebackeneSesambällchen.setHovered(false);
                 btnGebackeneSesambällchen.setSelected(false);
                 btnGebackeneSesambällchen.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
                 sb_Sesam.setProgress(0);
@@ -1949,7 +1970,6 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
 
 
 //----------------------------------------Mongolisch--------------------------------------------//
-        sb_Schaleklein = (SeekBar) findViewById(R.id.sb_Schaleklein);
         txtMongolisch = (TextView) findViewById(R.id.txtMongolisch);
         btnSchalenklein = (Button) findViewById(R.id.btnSchalenklein);
         btnSchalenklein.setOnClickListener(new View.OnClickListener(){
@@ -1966,19 +1986,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                     btnSchalenklein.setSelected(false);
                     btnSchalenklein.setText("蒙古餐");
                     txtMongolisch.setText("Mongolisch");
-
-                }
-                else if(btnSchalenklein.isHovered()==true)
-                {   btnSchalenklein.setHovered(false);
-                    sb_Schaleklein.setProgress(0);
-                    btnSchalenklein.setBackground(getDrawable(R.drawable.btn_extra2));
-                }
-                else if (btnSchalenklein.getBackground()==getDrawable(R.drawable.btn_extra_blue))
-                {
-                    btnSchalenklein.setBackground(getDrawable(R.drawable.btn_extra_blue));
+                    btnSchalenklein.clearAnimation();
                 }
                 else {
                     btnSchalenklein.setActivated(true);
+                    btnSchalenklein.startAnimation(animation);
                 }
             }
         });

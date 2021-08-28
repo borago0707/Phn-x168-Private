@@ -22,11 +22,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84d485d9-7b69-45cc-991a-10dd06f3c535" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/release/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/app-release.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/phnx168/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/phnx168/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -394,7 +392,28 @@
       <option name="project" value="LOCAL" />
       <updated>1629936945915</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="apk curry Soße 10 Stücke Zwiebel">
+      <created>1630092480862</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1630092480862</updated>
+    </task>
+    <task id="LOCAL-00027" summary="apk curry Soße 10 Stücke Zwiebel">
+      <created>1630092549537</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1630092549537</updated>
+    </task>
+    <task id="LOCAL-00028" summary="apk curry Soße 10 Stücke Zwiebel">
+      <created>1630092649887</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1630092649887</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -413,6 +432,7 @@
     <MESSAGE value="apk fertig HUAWEI！" />
     <MESSAGE value="apk mit Farben ausführbar" />
     <MESSAGE value="apk endlich ausführbar für HUAWEI!" />
-    <option name="LAST_COMMIT_MESSAGE" value="apk endlich ausführbar für HUAWEI!" />
+    <MESSAGE value="apk curry Soße 10 Stücke Zwiebel" />
+    <option name="LAST_COMMIT_MESSAGE" value="apk curry Soße 10 Stücke Zwiebel" />
   </component>
 </project>
