@@ -69,10 +69,10 @@
         android:id="@+id/textView20"
         android:layout_width="115dp"
         android:layout_height="45dp"
-        android:text="Kung Pao"
+        android:text="Rindfleisch\nGulasch"
         android:textAlignment="center"
         android:textColor="@color/color1"
-        android:textSize="20sp"
+        android:textSize="19sp"
         app:layout_constraintStart_toEndOf="@+id/HühnerfilietKnoblauch"
         app:layout_constraintTop_toBottomOf="@+id/Broccoli" />
 
@@ -295,7 +295,7 @@
         android:layout_width="115dp"
         android:layout_height="60dp"
         android:background="@drawable/btn_press_switch"
-        android:text="宫保鸡"
+        android:text="上海牛"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/AchtKostbarkeiten"

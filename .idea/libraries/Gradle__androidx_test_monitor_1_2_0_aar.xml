@@ -6,8 +6,9 @@
       <root url="file://$PROJECT_DIR$/caches/transforms-2/files-2.1/3c8264fe7f6d3907307ce945bbad52be/monitor-1.2.0/AndroidManifest.xml" />
       <root url="jar://$PROJECT_DIR$/caches/transforms-2/files-2.1/3c8264fe7f6d3907307ce945bbad52be/monitor-1.2.0/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/caches/transforms-2/files-2.1/3c8264fe7f6d3907307ce945bbad52be/monitor-1.2.0/res" />
-      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/3c8264fe7f6d3907307ce945bbad52be/monitor-1.2.0/AndroidManifest.xml" />
-      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/3c8264fe7f6d3907307ce945bbad52be/monitor-1.2.0/jars/classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-3/0be0774549072ffbfa3f368ee8e653e7/transformed/monitor-1.2.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-3/0be0774549072ffbfa3f368ee8e653e7/transformed/monitor-1.2.0/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-3/0be0774549072ffbfa3f368ee8e653e7/transformed/monitor-1.2.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test/monitor/1.2.0/2af6ec82fa4b1151212001e83514ccb39f360adc/monitor-1.2.0-javadoc.jar!/" />
