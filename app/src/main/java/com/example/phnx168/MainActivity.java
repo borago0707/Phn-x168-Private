@@ -1126,7 +1126,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                 return true;
             }
         });
-//----------------------------------------宫保鸡(上海牛) fertig-----------------------------------------------//
+//----------------------------------------宫保鸡 fertig-----------------------------------------------//
         btnHühnerfleischKungbo= (Button) findViewById(R.id.HühnerfleischKungbo);
         btnHühnerfleischKungbo.setOnClickListener(new View.OnClickListener(){
     @Override

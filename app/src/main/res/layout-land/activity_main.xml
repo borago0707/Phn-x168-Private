@@ -67,9 +67,9 @@
 
     <TextView
         android:id="@+id/textView20"
-        android:layout_width="115dp"
+        android:layout_width="140dp"
         android:layout_height="45dp"
-        android:text="Rindfleisch\nGulasch"
+        android:text="Schwein\nsüßsauerscharf"
         android:textAlignment="center"
         android:textColor="@color/color1"
         android:textSize="19sp"
@@ -295,7 +295,7 @@
         android:layout_width="115dp"
         android:layout_height="60dp"
         android:background="@drawable/btn_press_switch"
-        android:text="上海牛"
+        android:text="咕姥肉"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/AchtKostbarkeiten"
