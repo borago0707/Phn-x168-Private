@@ -1,12 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 36
 
     defaultConfig {
         applicationId "com.example.phnx168"
         minSdkVersion 22
-        targetSdkVersion 29
+        targetSdkVersion 36
+
         versionCode 1
         versionName "1.0"
 
@@ -19,6 +20,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildFeatures {
+        buildConfig true
+    }
+
     namespace 'com.example.phnx168'
 }
 
@@ -27,8 +33,9 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.7.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
     implementation 'com.google.android.material:material:1.13.0'
-    testImplementation 'junit:junit:4.12'
+
+    testImplementation 'junit:junit:4.13.2'
+
     androidTestImplementation 'androidx.test.ext:junit:1.3.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
-
 }
