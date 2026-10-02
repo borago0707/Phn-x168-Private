@@ -20,6 +20,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private int clickNum = 0;
+    private int mongolianSushiChiliState = 0;
     private Handler handler = new Handler();
     private Button btnGebEnte,btnGebHänchen,btnGebackeneHühnerFilet,btnGebNudel,btnGebReis,btnGebGemüse,btnGebKartoffeln,btnChampignons,btnGebackeneAnanas;
     private Button btnBohnen,btnHühnerfiletSpargel,btnGarnelenScharf,btnChickenWings,btnRindFleischZwiebel,btnBroccoli;
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnGebackenesfischfilet,btnMiniFrühlingsrolle, btnGebackeneWantan, btnRindfleischScharf;
     private Button btnSoß_Pikante, btnSoß_Süßsauer,btnSoße_Erdnuss, btnReis, btnSuppe, btnSchoko,btnSchalenklein, btnSchalenGroß, btnUnterlage;
     private TextView txtSesam,txtCurry,txtRind,txtMongolisch,txtSchaleGroß,txtErdnuss, txtUnterlage, btnSchalen_shao,btnOption,txtEnte, txtHähchen, txtHühnerfilet,txtBroccoli, txtSchoko;
-    private SeekBar sb_Sesam,sb_Curry,sb_Rind, sb_GebEnte, sb_GebHänchen, sb_GebHänchenFilet,sb_Broccoli, sb_SchaleGroß,sb_Unterlage,sb_Schaleklein,sb_Schoko;
+    private SeekBar sb_Curry,sb_Rind, sb_GebEnte, sb_GebHänchen, sb_GebHänchenFilet,sb_Broccoli, sb_SchaleGroß,sb_Unterlage,sb_Schaleklein,sb_Schoko;
     private Context txt_sb_GebEnte, txt_sb_GebHänchen, txt_sb_GebHänchenFilet,txt_sb_Broccoli;// for the Toast when SeekBar move
     private Vibrator vibrator;
 //------------------------------------------------------------------------------------------------------------------------------------//
@@ -131,19 +132,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
-        //-----------------------------长按复原-----------------------------------------------------------------
+        //-----------------------------Sesame Balls long-press selection----------------------------------------
         btnOption.setOnLongClickListener(new View.OnLongClickListener(){
             public boolean onLongClick(View v){
                 if (btnOption.isHovered()) {
-                    btnOption.setHovered(false);
-                    if (sb_Sesam != null && sb_Sesam.getProgress() != 0) {
-                        sb_Sesam.setProgress(0);
-                    }
+                    setSesameTenBalls(false);
                 } else {
                     vibrator.vibrate(500);
-                    btnOption.setActivated(false);
-                    btnOption.setSelected(false);
-                    btnOption.setHovered(true);
+                    setSesameTenBalls(true);
                 }
                 //;// 震动开
                 //Toast.makeText(MainActivity.this,"长按点击",Toast.LENGTH_SHORT).show();
@@ -165,11 +161,7 @@ public class MainActivity extends AppCompatActivity {
                                 btnOption.setActivated(false);
                                 btnOption.setSelected(true);
                             } else if (btnOption.isSelected() || btnOption.isHovered()) {
-                                btnOption.setSelected(false);
-                                btnOption.setHovered(false);
-                                if (sb_Sesam != null && sb_Sesam.getProgress() != 0) {
-                                    sb_Sesam.setProgress(0);
-                                }
+                                setSesameTenBalls(false);
                             } else {
                                 btnOption.setActivated(true);
                             }
@@ -1607,37 +1599,6 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             }
         });
 
-//-------------------------------Sesame Balls quantity------------------------------------------//
-        sb_Sesam = (SeekBar) findViewById(R.id.sb_Sesam);
-        if (sb_Sesam != null) {
-            sb_Sesam.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-                @Override
-                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                    if (progress == 1) {
-                        txtSesam.setText("10 Bällchen");
-                        btnOption.setText("10个球");
-                        btnOption.setActivated(false);
-                        btnOption.setSelected(false);
-                        btnOption.setHovered(true);
-                    } else {
-                        txtSesam.setText("Sesambällchen");
-                        btnOption.setText("芝麻球");
-                        btnOption.setActivated(false);
-                        btnOption.setSelected(false);
-                        btnOption.setHovered(false);
-                    }
-                }
-
-                @Override
-                public void onStartTrackingTouch(SeekBar seekBar) {
-                }
-
-                @Override
-                public void onStopTrackingTouch(SeekBar seekBar) {
-                }
-            });
-        }
-
 //-------------------------------Spicy beef----------------------------------------------------//
         btnRindfleischScharf = (Button) findViewById(R.id.RindfleischScharf);
         btnRindfleischScharf.setOnClickListener(new View.OnClickListener() {
@@ -1951,21 +1912,29 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
         btnSchalenklein.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View v) {
-                if (btnSchalenklein.isActivated()) {
+                if (mongolianSushiChiliState == 0) {
+                    mongolianSushiChiliState = 1;
+                    btnSchalenklein.setActivated(true);
+                    btnSchalenklein.setText("蒙古餐");
+                    txtMongolisch.setText("Mongolisch");
+                }
+                else if (mongolianSushiChiliState == 1) {
+                    mongolianSushiChiliState = 2;
+                    btnSchalenklein.setText("寿 司");
+                    txtMongolisch.setText("Sushi");
+                }
+                else if (mongolianSushiChiliState == 2) {
+                    mongolianSushiChiliState = 3;
                     btnSchalenklein.setActivated(false);
                     btnSchalenklein.setSelected(true);
                     btnSchalenklein.setText("剁椒");
                     txtMongolisch.setText("Chili");
                 }
-                else if (btnSchalenklein.isSelected()) {
+                else {
+                    mongolianSushiChiliState = 0;
                     btnSchalenklein.setSelected(false);
                     btnSchalenklein.setText("蒙古餐");
                     txtMongolisch.setText("Mongolisch");
-                }
-                else {
-                    btnSchalenklein.setActivated(true);
-                    btnSchalenklein.setText("寿 司");
-                    txtMongolisch.setText("Sushi");
                 }
             }
         });
@@ -2073,6 +2042,15 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
         });
         Log.d("正常启动", "onCreate() Called"); // Notification in Log
     }
+    // Keep the button and its German label in sync when the ten-ball option changes.
+    private void setSesameTenBalls(boolean tenBalls) {
+        txtSesam.setText(tenBalls ? "10 Bällchen" : "Sesambällchen");
+        btnOption.setText(tenBalls ? "10个球" : "芝麻球");
+        btnOption.setActivated(false);
+        btnOption.setSelected(false);
+        btnOption.setHovered(tenBalls);
+    }
+
     //----------------------the solution for the problem after reconnecting----------------------------------------
     @Override
     public void onConfigurationChanged(Configuration newConfig) {

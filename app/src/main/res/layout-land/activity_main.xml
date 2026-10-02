@@ -21,17 +21,6 @@
         app:layout_constraintStart_toEndOf="@+id/HühnerfleischKungbo"
         app:layout_constraintTop_toTopOf="@+id/txtCurry" />
 
-    <SeekBar
-        android:id="@+id/sb_Sesam"
-        android:layout_width="110dp"
-        android:layout_height="30dp"
-        android:max="1"
-        android:progressTint="@android:color/background_dark"
-        android:thumb="@color/design_default_color_background"
-        android:thumbTint="@android:color/background_dark"
-        app:layout_constraintStart_toStartOf="@+id/btnOption"
-        app:layout_constraintBottom_toTopOf="@+id/btnOption" />
-
     <Button
         android:id="@+id/HühnerfiletSpargel"
         android:layout_width="115dp"
@@ -642,7 +631,7 @@
         android:id="@+id/btnOption"
         android:layout_width="110dp"
         android:layout_height="60dp"
-        android:background="@drawable/btn_extra"
+        android:background="@drawable/btn_press_switch"
         android:text="芝麻球"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -739,13 +728,14 @@
 
     <TextView
         android:id="@+id/txtSesam"
-        android:layout_width="110dp"
-        android:layout_height="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
         android:text="Sesambällchen"
         android:textAlignment="center"
         android:textColor="@color/color1"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/btnOption"
+        app:layout_constraintEnd_toEndOf="@+id/btnOption"
         app:layout_constraintTop_toBottomOf="@+id/btnOption" />
 
     <TextView
