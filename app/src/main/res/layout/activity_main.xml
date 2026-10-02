@@ -21,15 +21,15 @@
         app:layout_constraintTop_toTopOf="@+id/Broccoli" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/txtSesam"
         android:layout_width="135dp"
         android:layout_height="40dp"
-        android:text="Chicken Wings"
+        android:text="Gebackene\nSesambällchen"
         android:textAlignment="center"
         android:textColor="@color/color1"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ChickenWings" />
+        app:layout_constraintTop_toBottomOf="@+id/GebackeneSesambällchen" />
 
     <TextView
         android:id="@+id/txtCurry"
@@ -109,7 +109,7 @@
         android:textAlignment="center"
         android:textColor="@color/color1"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintStart_toEndOf="@+id/txtSesam"
         app:layout_constraintTop_toBottomOf="@+id/RindFleischZwiebel" />
 
     <TextView
@@ -200,13 +200,13 @@
 
 
     <Button
-        android:id="@+id/ChickenWings"
+        android:id="@+id/GebackeneSesambällchen"
         android:layout_width="115dp"
         android:layout_height="60dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="70dp"
         android:background="@drawable/btn_press_switch"
-        android:text="鸡 翅"
+        android:text="芝麻球"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -221,8 +221,8 @@
         android:text="洋葱牛"
         android:textSize="36sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/ChickenWings"
-        app:layout_constraintTop_toTopOf="@+id/ChickenWings" />
+        app:layout_constraintStart_toEndOf="@+id/GebackeneSesambällchen"
+        app:layout_constraintTop_toTopOf="@+id/GebackeneSesambällchen" />
 
     <Button
         android:id="@+id/AchtKostbarkeiten"
@@ -234,7 +234,7 @@
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/RindFleischZwiebel"
-        app:layout_constraintTop_toTopOf="@+id/ChickenWings" />
+        app:layout_constraintTop_toTopOf="@+id/GebackeneSesambällchen" />
 
     <Button
         android:id="@+id/Broccoli"
@@ -245,8 +245,8 @@
         android:text="西兰花"
         android:textSize="36sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/ChickenWings"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintStart_toStartOf="@+id/GebackeneSesambällchen"
+        app:layout_constraintTop_toBottomOf="@+id/txtSesam" />
 
     <Button
         android:id="@+id/omelett"
@@ -258,7 +258,7 @@
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/AchtKostbarkeiten"
-        app:layout_constraintTop_toTopOf="@+id/ChickenWings" />
+        app:layout_constraintTop_toTopOf="@+id/GebackeneSesambällchen" />
 
     <Button
         android:id="@+id/HühnerfilietKnoblauch"
@@ -452,11 +452,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textBroccoli" />
 
     <Button
-        android:id="@+id/GebackeneSesambällchen"
+        android:id="@+id/ChickenWings"
         android:layout_width="115dp"
         android:layout_height="60dp"
         android:background="@drawable/btn_press_switch"
-        android:text="芝麻球"
+        android:text="鸡 翅"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/RindFleischZwiebel"
@@ -514,7 +514,7 @@
         android:text="菠 萝"
         android:textSize="36sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/ChickenWings"
+        app:layout_constraintStart_toStartOf="@+id/GebackeneSesambällchen"
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
     <SeekBar
@@ -641,7 +641,7 @@
         android:text="白饭"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/ChickenWings"
+        app:layout_constraintStart_toStartOf="@+id/GebackeneSesambällchen"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <Button
@@ -674,7 +674,7 @@
         android:text="酸辣汤"
         android:textSize="26sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/GebackeneSesambällchen"
+        app:layout_constraintStart_toStartOf="@+id/ChickenWings"
         app:layout_constraintTop_toTopOf="@+id/Reis" />
 
     <TextView
@@ -847,7 +847,7 @@
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/omelett"
-        app:layout_constraintTop_toTopOf="@+id/ChickenWings" />
+        app:layout_constraintTop_toTopOf="@+id/GebackeneSesambällchen" />
 
     <TextView
         android:id="@+id/txtEnte"
@@ -996,15 +996,15 @@
         app:layout_constraintTop_toBottomOf="@+id/GebackeneAnanas" />
 
     <TextView
-        android:id="@+id/txtSesam"
+        android:id="@+id/textView12"
         android:layout_width="140dp"
         android:layout_height="50dp"
-        android:text="Gebackene Sesambällchen"
+        android:text="Chicken Wings"
         android:textAlignment="center"
         android:textColor="@color/color1"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/GebackeneSesambällchen" />
+        app:layout_constraintTop_toBottomOf="@+id/ChickenWings" />
 
     <TextView
         android:id="@+id/textView30"
