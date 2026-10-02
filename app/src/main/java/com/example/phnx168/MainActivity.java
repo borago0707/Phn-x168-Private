@@ -158,22 +158,14 @@ public class MainActivity extends AppCompatActivity {
                         if (clickNum == 1) {
                             Log.d("btn listener:", "btn is clicked!");
                             if (btnOption.isActivated()==true){
-                                btnOption.setText("剁椒");
-                                txtOption.setText("Chili");
                                 btnOption.setActivated(false);
                                 btnOption.setSelected(true);
                             }
                             else if (btnOption.isSelected()==true){
-                                btnOption.setText("待定");
-                                txtOption.setText("Option");
                                 btnOption.setSelected(false);
                             }
                             else if(btnOption.isHovered()==true)
-                            {btnOption.setHovered(false);
-                                btnOption.setText("待定");
-                                txtOption.setText("Option");
-
-                            }
+                            {btnOption.setHovered(false);}
                             else {
                                 btnOption.setActivated(true);
                             }
@@ -218,8 +210,6 @@ public class MainActivity extends AppCompatActivity {
                             btnSchalen_shao.startAnimation(animation);
                             btnUnterlage.setHovered(true);
                             btnUnterlage.startAnimation(animation);
-                            btnSchalenklein.setHovered(true);
-                            btnSchalenklein.startAnimation(animation);
                             btnSchalen_shao.setHovered(true);
                             btnSchalen_shao.startAnimation(animation);
                             btnSchalenGroß.setHovered(true);
@@ -252,7 +242,6 @@ public class MainActivity extends AppCompatActivity {
                             btnGebackeneHühnerFilet.setHovered(false);
                             btnSchalen_shao.setHovered(false);
                             btnUnterlage.setHovered(false);
-                            btnSchalenklein.setHovered(false);
                             btnSchalen_shao.setHovered(false);
                             btnSchalenGroß.setHovered(false);
 
@@ -307,7 +296,6 @@ public class MainActivity extends AppCompatActivity {
 
                             btnSchalen_shao.setHovered(true);
                             btnSchalenGroß.setHovered(true);
-                            btnSchalenklein.setHovered(true);
                             btnUnterlage.setHovered(true);
                         }
                         //防止handler引起的内存泄漏
@@ -1969,28 +1957,27 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
         });
 
 
-//----------------------------------------Mongolisch--------------------------------------------//
+//------------------------------Mongolian / Sushi / Chili---------------------------------------//
         txtMongolisch = (TextView) findViewById(R.id.txtMongolisch);
         btnSchalenklein = (Button) findViewById(R.id.btnSchalenklein);
         btnSchalenklein.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View v) {
-                if (btnSchalenklein.isActivated()==true){
+                if (btnSchalenklein.isActivated()) {
                     btnSchalenklein.setActivated(false);
                     btnSchalenklein.setSelected(true);
-                    btnSchalenklein.setText("寿 司");
-                    txtMongolisch.setText("Suschi");
-
+                    btnSchalenklein.setText("剁椒");
+                    txtMongolisch.setText("Chili");
                 }
-                else if (btnSchalenklein.isSelected()==true){
+                else if (btnSchalenklein.isSelected()) {
                     btnSchalenklein.setSelected(false);
                     btnSchalenklein.setText("蒙古餐");
                     txtMongolisch.setText("Mongolisch");
-                    btnSchalenklein.clearAnimation();
                 }
                 else {
                     btnSchalenklein.setActivated(true);
-                    btnSchalenklein.startAnimation(animation);
+                    btnSchalenklein.setText("寿 司");
+                    txtMongolisch.setText("Sushi");
                 }
             }
         });
