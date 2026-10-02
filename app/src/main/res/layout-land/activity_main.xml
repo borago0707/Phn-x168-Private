@@ -633,7 +633,7 @@
         android:layout_height="60dp"
         android:background="@drawable/btn_press_switch"
         android:text="芝麻球"
-        android:textSize="30sp"
+        android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/Unterlage"
         app:layout_constraintEnd_toEndOf="@+id/Soße_Erdnuss" />
@@ -733,9 +733,9 @@
         android:text="Sesambällchen"
         android:textAlignment="center"
         android:textColor="@color/color1"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/btnOption"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/btnOption"
+        app:layout_constraintStart_toStartOf="@+id/btnOption"
         app:layout_constraintTop_toBottomOf="@+id/btnOption" />
 
     <TextView

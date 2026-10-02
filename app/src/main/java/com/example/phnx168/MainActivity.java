@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
 import android.view.View;
+import android.view.MotionEvent;
 import android.util.Log;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
@@ -22,6 +23,14 @@ public class MainActivity extends AppCompatActivity {
     private int clickNum = 0;
     private int mongolianSushiChiliState = 0;
     private Handler handler = new Handler();
+    private final Handler exitHandler = new Handler();
+    private boolean tripleTestActive = false;
+    private final Runnable exitAfterHold = new Runnable() {
+        @Override
+        public void run() {
+            finish();
+        }
+    };
     private Button btnGebEnte,btnGebHänchen,btnGebackeneHühnerFilet,btnGebNudel,btnGebReis,btnGebGemüse,btnGebKartoffeln,btnChampignons,btnGebackeneAnanas;
     private Button btnBohnen,btnHühnerfiletSpargel,btnGarnelenScharf,btnChickenWings,btnRindFleischZwiebel,btnBroccoli;
     private Button btnHühnerfilietKnoblauch,btnAchtKostbarkeiten,btnHühnerfleischKungbo,btnomelett,btnCurryHuhn,btnGebKäse;
@@ -133,8 +142,38 @@ public class MainActivity extends AppCompatActivity {
         });*/
 
         //-----------------------------Sesame Balls long-press selection----------------------------------------
+        btnOption.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (!tripleTestActive) {
+                    return false;
+                }
+                switch (event.getActionMasked()) {
+                    case MotionEvent.ACTION_DOWN:
+                        exitHandler.removeCallbacks(exitAfterHold);
+                        exitHandler.postDelayed(exitAfterHold, 3000L);
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        if (event.getX() < 0 || event.getY() < 0
+                                || event.getX() >= v.getWidth() || event.getY() >= v.getHeight()) {
+                            exitHandler.removeCallbacks(exitAfterHold);
+                        }
+                        break;
+                    case MotionEvent.ACTION_UP:
+                    case MotionEvent.ACTION_CANCEL:
+                        exitHandler.removeCallbacks(exitAfterHold);
+                        break;
+                    default:
+                        break;
+                }
+                return false;
+            }
+        });
         btnOption.setOnLongClickListener(new View.OnLongClickListener(){
             public boolean onLongClick(View v){
+                if (tripleTestActive) {
+                    return true;
+                }
                 if (btnOption.isHovered()) {
                     setSesameTenBalls(false);
                 } else {
@@ -151,6 +190,9 @@ public class MainActivity extends AppCompatActivity {
         btnOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (tripleTestActive) {
+                    return;
+                }
                 clickNum++;
                 handler.postDelayed(new Runnable() {
                     @Override
@@ -165,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
                             } else {
                                 btnOption.setActivated(true);
                             }
-                        }else if(clickNum==2){       //双击
+                        }else if(clickNum==2){       // Double-tap test
                             Log.d("btn listener:", "btn is doubleClicked!");
                             btnOption.setHovered(false);
                             btnOption.setActivated(false);
@@ -189,6 +231,11 @@ public class MainActivity extends AppCompatActivity {
                             btnSchoko.startAnimation(animation);
                             btnOption.setHovered(true);
                             btnOption.startAnimation(animation);
+                            // The Mongolian/Sushi/Chili button joins the blue blinking test.
+                            btnSchalenklein.setActivated(false);
+                            btnSchalenklein.setSelected(false);
+                            btnSchalenklein.setHovered(true);
+                            btnSchalenklein.startAnimation(animation);
 
                             btnBohnen.setHovered(true);
                             btnBohnen.startAnimation(animation);
@@ -214,10 +261,10 @@ public class MainActivity extends AppCompatActivity {
                         }
 //---------------------------------Love--cc----------三连击------------------------------------
                         else if (clickNum==3){
+                            tripleTestActive = true;
                             btnOption.setHovered(false);
                             btnOption.setActivated(false);
                             btnOption.setSelected(false);
-                            btnOption.setEnabled(false);
 
                             btnCurryHuhn.setHovered(false);
                             btnAchtKostbarkeiten.setHovered(false);
@@ -240,6 +287,12 @@ public class MainActivity extends AppCompatActivity {
                             btnUnterlage.setHovered(false);
                             btnSchalen_shao.setHovered(false);
                             btnSchalenGroß.setHovered(false);
+                            // Restore this button's existing dish selection after the blue test.
+                            btnSchalenklein.setHovered(false);
+                            btnSchalenklein.setActivated(mongolianSushiChiliState == 1
+                                    || mongolianSushiChiliState == 2);
+                            btnSchalenklein.setSelected(mongolianSushiChiliState == 3);
+                            btnSchalenklein.clearAnimation();
 
                             btnGebackeneAnanas.clearAnimation();
                             btnAchtKostbarkeiten.clearAnimation();
@@ -249,6 +302,9 @@ public class MainActivity extends AppCompatActivity {
                             btnCurryHuhn.clearAnimation();
                             btnSuppe.clearAnimation();
                             btnOption.clearAnimation();
+                            // Keep sesame balls blue and blinking while still accepting the exit hold.
+                            btnOption.setHovered(true);
+                            btnOption.startAnimation(animation);
 
                             //btnGebackeneHühnerFilet.clearAnimation();
 
@@ -266,8 +322,13 @@ public class MainActivity extends AppCompatActivity {
                             btnGebKäse.startAnimation(animation);
                             btnGebBanane.setBackground(getDrawable(R.drawable.love_button));
                             btnGebBanane.startAnimation(animation);
-                            btnRindfleischScharf.setBackground(getDrawable(R.drawable.love_button));
-                            btnRindfleischScharf.startAnimation(animation);
+                            // Chicken Wings replace spicy beef in the pink blinking test.
+                            btnChickenWings.setActivated(false);
+                            btnChickenWings.setSelected(false);
+                            btnChickenWings.setHovered(false);
+                            btnChickenWings.setBackground(getDrawable(R.drawable.love_button));
+                            btnChickenWings.setEnabled(false);
+                            btnChickenWings.startAnimation(animation);
                             btnGebackenesfischfilet.setBackground(getDrawable(R.drawable.love_button));
                             btnGebackenesfischfilet.startAnimation(animation);
                             btnSchoko.setBackground(getDrawable(R.drawable.love_button));
@@ -2049,6 +2110,12 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
         btnOption.setActivated(false);
         btnOption.setSelected(false);
         btnOption.setHovered(tenBalls);
+    }
+
+    @Override
+    protected void onDestroy() {
+        exitHandler.removeCallbacks(exitAfterHold);
+        super.onDestroy();
     }
 
     //----------------------the solution for the problem after reconnecting----------------------------------------
