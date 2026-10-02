@@ -23,14 +23,14 @@
 
     <SeekBar
         android:id="@+id/sb_Sesam"
-        android:layout_width="120dp"
+        android:layout_width="110dp"
         android:layout_height="30dp"
         android:max="1"
         android:progressTint="@android:color/background_dark"
         android:thumb="@color/design_default_color_background"
         android:thumbTint="@android:color/background_dark"
-        app:layout_constraintStart_toStartOf="@+id/GebackeneSesambällchen"
-        app:layout_constraintTop_toBottomOf="@+id/GebackeneSesambällchen" />
+        app:layout_constraintStart_toStartOf="@+id/btnOption"
+        app:layout_constraintBottom_toTopOf="@+id/btnOption" />
 
     <Button
         android:id="@+id/HühnerfiletSpargel"
@@ -44,15 +44,15 @@
         app:layout_constraintTop_toTopOf="@+id/Broccoli" />
 
     <TextView
-        android:id="@+id/txtSesam"
+        android:id="@+id/txtRindfleischScharf"
         android:layout_width="115dp"
         android:layout_height="45dp"
-        android:text="Sesambällchen"
+        android:text="Rindfleisch\nscharf"
         android:textAlignment="center"
         android:textColor="@color/color1"
         android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@+id/GebackeneSesambällchen"
-        app:layout_constraintTop_toBottomOf="@+id/GebackeneSesambällchen" />
+        app:layout_constraintStart_toStartOf="@+id/RindfleischScharf"
+        app:layout_constraintTop_toBottomOf="@+id/RindfleischScharf" />
 
     <TextView
         android:id="@+id/txtCurry"
@@ -220,13 +220,13 @@
 
 
     <Button
-        android:id="@+id/GebackeneSesambällchen"
+        android:id="@+id/RindfleischScharf"
         android:layout_width="115dp"
         android:layout_height="60dp"
         android:layout_marginStart="3dp"
         android:layout_marginTop="80dp"
-        android:background="@drawable/btn_press_switch_berate"
-        android:text="芝麻球"
+        android:background="@drawable/btn_press_switch"
+        android:text="麻辣牛"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -241,8 +241,8 @@
         android:text="洋葱牛"
         android:textSize="36sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/GebackeneSesambällchen"
-        app:layout_constraintTop_toTopOf="@+id/GebackeneSesambällchen" />
+        app:layout_constraintStart_toEndOf="@+id/RindfleischScharf"
+        app:layout_constraintTop_toTopOf="@+id/RindfleischScharf" />
 
     <Button
         android:id="@+id/AchtKostbarkeiten"
@@ -254,7 +254,7 @@
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/RindFleischZwiebel"
-        app:layout_constraintTop_toTopOf="@+id/GebackeneSesambällchen" />
+        app:layout_constraintTop_toTopOf="@+id/RindfleischScharf" />
 
     <Button
         android:id="@+id/Broccoli"
@@ -264,8 +264,8 @@
         android:text="西兰花"
         android:textSize="36sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/GebackeneSesambällchen"
-        app:layout_constraintTop_toBottomOf="@+id/txtSesam" />
+        app:layout_constraintStart_toStartOf="@+id/RindfleischScharf"
+        app:layout_constraintTop_toBottomOf="@+id/txtRindfleischScharf" />
 
     <Button
         android:id="@+id/omelett"
@@ -277,7 +277,7 @@
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/AchtKostbarkeiten"
-        app:layout_constraintTop_toTopOf="@+id/GebackeneSesambällchen" />
+        app:layout_constraintTop_toTopOf="@+id/RindfleischScharf" />
 
     <Button
         android:id="@+id/HühnerfilietKnoblauch"
@@ -532,7 +532,7 @@
         android:text="菠 萝"
         android:textSize="36sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/GebackeneSesambällchen"
+        app:layout_constraintStart_toStartOf="@+id/RindfleischScharf"
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
     <SeekBar
@@ -635,15 +635,15 @@
         android:text="白饭"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/GebackeneSesambällchen"
+        app:layout_constraintStart_toStartOf="@+id/RindfleischScharf"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <Button
         android:id="@+id/btnOption"
         android:layout_width="110dp"
         android:layout_height="60dp"
-        android:background="@drawable/btn_extra2"
-        android:text="待定"
+        android:background="@drawable/btn_extra"
+        android:text="芝麻球"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/Unterlage"
@@ -738,13 +738,13 @@
         app:layout_constraintTop_toBottomOf="@+id/Suppe" />
 
     <TextView
-        android:id="@+id/txtOption"
+        android:id="@+id/txtSesam"
         android:layout_width="110dp"
         android:layout_height="30dp"
-        android:text="Option"
+        android:text="Sesambällchen"
         android:textAlignment="center"
         android:textColor="@color/color1"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/btnOption"
         app:layout_constraintTop_toBottomOf="@+id/btnOption" />
 
@@ -837,7 +837,7 @@
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/omelett"
-        app:layout_constraintTop_toTopOf="@+id/GebackeneSesambällchen" />
+        app:layout_constraintTop_toTopOf="@+id/RindfleischScharf" />
 
     <TextView
         android:id="@+id/txtEnte"

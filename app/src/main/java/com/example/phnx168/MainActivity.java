@@ -25,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
     private Button btnBohnen,btnHühnerfiletSpargel,btnGarnelenScharf,btnChickenWings,btnRindFleischZwiebel,btnBroccoli;
     private Button btnHühnerfilietKnoblauch,btnAchtKostbarkeiten,btnHühnerfleischKungbo,btnomelett,btnCurryHuhn,btnGebKäse;
     private Button btnGebackeneGarnelen, btnChickenNuggets, btnGebBanane, btnpommes,btnTintenfischRing;
-    private Button btnGebackenesfischfilet,btnMiniFrühlingsrolle, btnGebackeneWantan, btnGebackeneSesambällchen;
+    private Button btnGebackenesfischfilet,btnMiniFrühlingsrolle, btnGebackeneWantan, btnRindfleischScharf;
     private Button btnSoß_Pikante, btnSoß_Süßsauer,btnSoße_Erdnuss, btnReis, btnSuppe, btnSchoko,btnSchalenklein, btnSchalenGroß, btnUnterlage;
-    private TextView txtSesam,txtCurry,txtRind,txtMongolisch,txtSchaleGroß,txtErdnuss, txtUnterlage, btnSchalen_shao,btnOption,txtEnte, txtHähchen, txtHühnerfilet,txtOption,txtBroccoli, txtSchoko;
+    private TextView txtSesam,txtCurry,txtRind,txtMongolisch,txtSchaleGroß,txtErdnuss, txtUnterlage, btnSchalen_shao,btnOption,txtEnte, txtHähchen, txtHühnerfilet,txtBroccoli, txtSchoko;
     private SeekBar sb_Sesam,sb_Curry,sb_Rind, sb_GebEnte, sb_GebHänchen, sb_GebHänchenFilet,sb_Broccoli, sb_SchaleGroß,sb_Unterlage,sb_Schaleklein,sb_Schoko;
     private Context txt_sb_GebEnte, txt_sb_GebHänchen, txt_sb_GebHänchenFilet,txt_sb_Broccoli;// for the Toast when SeekBar move
     private Vibrator vibrator;
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
 //----------------------------------------Test Button-----------------------------------------------------------------------------------------//
         btnOption= (Button) findViewById(R.id.btnOption);
-        /**/txtOption = (TextView) findViewById(R.id.txtOption);
+        txtSesam = (TextView) findViewById(R.id.txtSesam);
 /*        btnOption.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View v) {
@@ -134,13 +134,17 @@ public class MainActivity extends AppCompatActivity {
         //-----------------------------长按复原-----------------------------------------------------------------
         btnOption.setOnLongClickListener(new View.OnLongClickListener(){
             public boolean onLongClick(View v){
-                if   (btnOption.isHovered()==true){
-                    btnOption.setHovered(false);}
-                else{
+                if (btnOption.isHovered()) {
+                    btnOption.setHovered(false);
+                    if (sb_Sesam != null && sb_Sesam.getProgress() != 0) {
+                        sb_Sesam.setProgress(0);
+                    }
+                } else {
                     vibrator.vibrate(500);
                     btnOption.setActivated(false);
                     btnOption.setSelected(false);
-                    btnOption.setHovered(true);}
+                    btnOption.setHovered(true);
+                }
                 //;// 震动开
                 //Toast.makeText(MainActivity.this,"长按点击",Toast.LENGTH_SHORT).show();
                 return true;
@@ -157,16 +161,16 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         if (clickNum == 1) {
                             Log.d("btn listener:", "btn is clicked!");
-                            if (btnOption.isActivated()==true){
+                            if (btnOption.isActivated()) {
                                 btnOption.setActivated(false);
                                 btnOption.setSelected(true);
-                            }
-                            else if (btnOption.isSelected()==true){
+                            } else if (btnOption.isSelected() || btnOption.isHovered()) {
                                 btnOption.setSelected(false);
-                            }
-                            else if(btnOption.isHovered()==true)
-                            {btnOption.setHovered(false);}
-                            else {
+                                btnOption.setHovered(false);
+                                if (sb_Sesam != null && sb_Sesam.getProgress() != 0) {
+                                    sb_Sesam.setProgress(0);
+                                }
+                            } else {
                                 btnOption.setActivated(true);
                             }
                         }else if(clickNum==2){       //双击
@@ -270,8 +274,8 @@ public class MainActivity extends AppCompatActivity {
                             btnGebKäse.startAnimation(animation);
                             btnGebBanane.setBackground(getDrawable(R.drawable.love_button));
                             btnGebBanane.startAnimation(animation);
-                            btnGebackeneSesambällchen.setBackground(getDrawable(R.drawable.love_button));
-                            btnGebackeneSesambällchen.startAnimation(animation);
+                            btnRindfleischScharf.setBackground(getDrawable(R.drawable.love_button));
+                            btnRindfleischScharf.startAnimation(animation);
                             btnGebackenesfischfilet.setBackground(getDrawable(R.drawable.love_button));
                             btnGebackenesfischfilet.startAnimation(animation);
                             btnSchoko.setBackground(getDrawable(R.drawable.love_button));
@@ -1603,79 +1607,63 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             }
         });
 
-//---------------------------------------- 芝麻球-fertig--------------------------------------------//
+//-------------------------------Sesame Balls quantity------------------------------------------//
         sb_Sesam = (SeekBar) findViewById(R.id.sb_Sesam);
-        txtSesam = (TextView) findViewById(R.id.txtSesam);
-        sb_Sesam.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
-            @Override
-            public void onProgressChanged (SeekBar seekBar,int progress, boolean fromUser){
-                if(btnGebackeneSesambällchen.isSelected()!=true &&btnGebackeneSesambällchen.isHovered()!=true) {
-                    btnGebackeneSesambällchen.setActivated(true);
+        if (sb_Sesam != null) {
+            sb_Sesam.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                    if (progress == 1) {
+                        txtSesam.setText("10 Bällchen");
+                        btnOption.setText("10个球");
+                        btnOption.setActivated(false);
+                        btnOption.setSelected(false);
+                        btnOption.setHovered(true);
+                    } else {
+                        txtSesam.setText("Sesambällchen");
+                        btnOption.setText("芝麻球");
+                        btnOption.setActivated(false);
+                        btnOption.setSelected(false);
+                        btnOption.setHovered(false);
+                    }
                 }
 
-                if (sb_Sesam.getProgress()==1){
-                    txtSesam.setText("10 bällchen");
-                    btnGebackeneSesambällchen.setText("10个球");
-                    btnGebackeneSesambällchen.setHovered(true);
-                    btnGebackeneSesambällchen.setActivated(false);
-                    btnGebackeneSesambällchen.setSelected(false);
-                    btnGebackeneSesambällchen.setBackground(getDrawable(R.drawable.blue_press_berate));
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {
                 }
-                if(sb_Sesam.getProgress()==0){
-                    txtSesam.setText("Sesambällchen");
-                    btnGebackeneSesambällchen.setText("芝麻球");
-                    btnGebackeneSesambällchen.setHovered(false);
-                    btnGebackeneSesambällchen.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
-                    btnGebackeneSesambällchen.setActivated(false);
-                    btnGebackeneSesambällchen.setSelected(false);
+
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) {
                 }
-            }
+            });
+        }
+
+//-------------------------------Spicy beef----------------------------------------------------//
+        btnRindfleischScharf = (Button) findViewById(R.id.RindfleischScharf);
+        btnRindfleischScharf.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar){
-            }
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
+            public void onClick(View v) {
+                if (btnRindfleischScharf.isActivated()) {
+                    btnRindfleischScharf.setActivated(false);
+                    btnRindfleischScharf.setSelected(true);
+                } else if (btnRindfleischScharf.isSelected() || btnRindfleischScharf.isHovered()) {
+                    btnRindfleischScharf.setSelected(false);
+                    btnRindfleischScharf.setHovered(false);
+                    btnRindfleischScharf.setBackground(getDrawable(R.drawable.btn_press_switch));
+                } else {
+                    btnRindfleischScharf.setActivated(true);
+                }
             }
         });
 
-        btnGebackeneSesambällchen= (Button) findViewById(R.id.GebackeneSesambällchen);
-        btnGebackeneSesambällchen.setOnClickListener(new View.OnClickListener(){
+        btnRindfleischScharf.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
-            public void onClick (View v) {
-            if (btnGebackeneSesambällchen.isActivated()==true){
-                btnGebackeneSesambällchen.setActivated(false);
-                btnGebackeneSesambällchen.setSelected(true);
-            }
-            else if (btnGebackeneSesambällchen.isSelected()==true){
-                btnGebackeneSesambällchen.setSelected(false);
-                btnGebackeneSesambällchen.setHovered(false);
-                btnGebackeneSesambällchen.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
-                sb_Sesam.setProgress(0);
-            }
-            else if(btnGebackeneSesambällchen.isHovered()==true||btnGebackeneSesambällchen.isHovered()==true)
-            {   btnGebackeneSesambällchen.setHovered(false);
-                btnGebackeneSesambällchen.setSelected(false);
-                btnGebackeneSesambällchen.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
-                sb_Sesam.setProgress(0);
-            }
-            else if (btnGebackeneSesambällchen.getBackground()==getDrawable(R.drawable.blue_press_berate))
-            {
-                btnGebackeneSesambällchen.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
-            }
-            else {
-                btnGebackeneSesambällchen.setActivated(true);
-            }
-            }
-        });
-
-        btnGebackeneSesambällchen.setOnLongClickListener(new View.OnLongClickListener(){
-            public boolean onLongClick(View v){
-            vibrator.vibrate(100);
-            btnGebackeneSesambällchen.setActivated(false);
-            btnGebackeneSesambällchen.setSelected(false);
-            btnGebackeneSesambällchen.setHovered(true);
-            btnGebackeneSesambällchen.setBackground(getDrawable(R.drawable.blue_press_berate));
-
+            public boolean onLongClick(View v) {
+                vibrator.vibrate(100);
+                btnRindfleischScharf.setActivated(false);
+                btnRindfleischScharf.setSelected(false);
+                btnRindfleischScharf.setHovered(true);
+                btnRindfleischScharf.setBackground(getDrawable(R.drawable.blue_press));
                 return true;
             }
         });
