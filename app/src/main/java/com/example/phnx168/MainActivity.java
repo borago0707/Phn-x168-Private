@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private Handler handler = new Handler();
     private final Handler exitHandler = new Handler();
     private boolean tripleTestActive = false;
+    private boolean doubleMTestActive = false;
     private final Runnable exitAfterHold = new Runnable() {
         @Override
         public void run() {
@@ -243,14 +244,29 @@ public class MainActivity extends AppCompatActivity {
                             btnGebEnte.startAnimation(animation);
                             btnGebackeneHühnerFilet.setHovered(true);
                             btnGebackeneHühnerFilet.startAnimation(animation);
-                            btnSchalen_shao.setHovered(true);
-                            btnSchalen_shao.startAnimation(animation);
                             btnUnterlage.setHovered(true);
                             btnUnterlage.startAnimation(animation);
-                            btnSchalen_shao.setHovered(true);
-                            btnSchalen_shao.startAnimation(animation);
                             btnSchalenGroß.setHovered(true);
                             btnSchalenGroß.startAnimation(animation);
+
+                            // Exclude the spatula button from green blinking in this test.
+                            btnSchalen_shao.setHovered(false);
+                            btnSchalen_shao.clearAnimation();
+
+                            // Reuse the existing pink test background for the seven M-shaped buttons.
+                            for (Button pinkButton : new Button[]{
+                                    btnHühnerfleischKungbo, btnMiniFrühlingsrolle,
+                                    btnGebackeneWantan, btnCurryHuhn,
+                                    btnHühnerfiletSpargel, btnGebKäse, btnGebackeneGarnelen}) {
+                                pinkButton.clearAnimation();
+                                pinkButton.setActivated(false);
+                                pinkButton.setSelected(false);
+                                pinkButton.setHovered(false);
+                                pinkButton.setBackground(getDrawable(R.drawable.love_button));
+                                pinkButton.setEnabled(false);
+                                pinkButton.startAnimation(animation);
+                            }
+                            doubleMTestActive = true;
 
                         }
 //---------------------------------Love--cc----------三连击------------------------------------
@@ -281,12 +297,35 @@ public class MainActivity extends AppCompatActivity {
                             btnUnterlage.setHovered(false);
                             btnSchalen_shao.setHovered(false);
                             btnSchalenGroß.setHovered(false);
-                            // Restore this button's existing dish selection after the blue test.
-                            btnSchalenklein.setHovered(false);
-                            btnSchalenklein.setActivated(mongolianSushiChiliState == 1
-                                    || mongolianSushiChiliState == 2);
-                            btnSchalenklein.setSelected(mongolianSushiChiliState == 3);
+                            // Clear double-test-only pink effects without changing direct triple taps.
+                            if (doubleMTestActive) {
+                                for (Button normalButton : new Button[]{
+                                        btnMiniFrühlingsrolle, btnGebackeneWantan,
+                                        btnGebackeneGarnelen}) {
+                                    normalButton.clearAnimation();
+                                    normalButton.setEnabled(true);
+                                    normalButton.setActivated(false);
+                                    normalButton.setSelected(false);
+                                    normalButton.setHovered(false);
+                                    normalButton.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
+                                }
+                                // Curry chicken uses its own regular button background.
+                                btnCurryHuhn.clearAnimation();
+                                btnCurryHuhn.setEnabled(true);
+                                btnCurryHuhn.setActivated(false);
+                                btnCurryHuhn.setSelected(false);
+                                btnCurryHuhn.setHovered(false);
+                                btnCurryHuhn.setBackground(getDrawable(R.drawable.btn_press_switch));
+                                doubleMTestActive = false;
+                            }
+                            // Show Mongolian in the green blinking test, regardless of the previous dish.
                             btnSchalenklein.clearAnimation();
+                            btnSchalenklein.setActivated(false);
+                            btnSchalenklein.setSelected(false);
+                            btnSchalenklein.setHovered(true);
+                            btnSchalenklein.setText("蒙古餐");
+                            txtMongolisch.setText("Mongolisch");
+                            btnSchalenklein.startAnimation(animation);
 
                             btnGebackeneAnanas.clearAnimation();
                             btnAchtKostbarkeiten.clearAnimation();
@@ -296,9 +335,6 @@ public class MainActivity extends AppCompatActivity {
                             btnCurryHuhn.clearAnimation();
                             btnSuppe.clearAnimation();
                             btnOption.clearAnimation();
-                            // Keep sesame balls blue and blinking while still accepting the exit hold.
-                            btnOption.setHovered(true);
-                            btnOption.startAnimation(animation);
 
                             //btnGebackeneHühnerFilet.clearAnimation();
 
@@ -346,6 +382,7 @@ public class MainActivity extends AppCompatActivity {
                             btnSoß_Pikante.startAnimation(animation);
 
                             btnSchalen_shao.setHovered(true);
+                            btnSchalen_shao.startAnimation(animation);
                             btnSchalenGroß.setHovered(true);
                             btnUnterlage.setHovered(true);
                         }
@@ -1924,7 +1961,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                     btnSchoko.setSelected(true);
 
                     btnSchoko.setText("玻璃碗");
-                    txtSchoko.setText("Glasschale");
+                    txtSchoko.setText("Glass");
 
                 }
                 else if (btnSchoko.isSelected()==true){
@@ -1968,6 +2005,9 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
         btnSchalenklein.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View v) {
+                if (tripleTestActive) {
+                    return;
+                }
                 if (mongolianSushiChiliState == 0) {
                     mongolianSushiChiliState = 1;
                     btnSchalenklein.setActivated(true);
