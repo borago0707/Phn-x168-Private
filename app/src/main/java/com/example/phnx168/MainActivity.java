@@ -209,12 +209,8 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }else if(clickNum==2){       // Double-tap test
                             Log.d("btn listener:", "btn is doubleClicked!");
-                            btnOption.setHovered(false);
-                            btnOption.setActivated(false);
-                            btnOption.setSelected(false);
+                            setSesameTenBalls(false);
 
-                            btnCurryHuhn.setHovered(true);
-                            btnCurryHuhn.startAnimation(animation);
                             btnAchtKostbarkeiten.setHovered(true);
                             btnAchtKostbarkeiten.startAnimation(animation);
                             btnRindFleischZwiebel.setHovered(true);
@@ -229,8 +225,6 @@ public class MainActivity extends AppCompatActivity {
                             btnSuppe.startAnimation(animation);
                             btnSchoko.setHovered(true);
                             btnSchoko.startAnimation(animation);
-                            btnOption.setHovered(true);
-                            btnOption.startAnimation(animation);
                             // The Mongolian/Sushi/Chili button joins the blue blinking test.
                             btnSchalenklein.setActivated(false);
                             btnSchalenklein.setSelected(false);
@@ -1902,6 +1896,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                 }
                 else{
                     btnSchoko.setText("巧克力 " + progress);
+                    txtSchoko.setText("Schoko");
                     btnSchoko.setHovered(true);
                     btnSchoko.setActivated(false);
                     btnSchoko.setSelected(false);
@@ -1929,7 +1924,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                     btnSchoko.setSelected(true);
 
                     btnSchoko.setText("玻璃碗");
-                    txtSchoko.setText("Schoko-Glas");
+                    txtSchoko.setText("Glasschale");
 
                 }
                 else if (btnSchoko.isSelected()==true){
