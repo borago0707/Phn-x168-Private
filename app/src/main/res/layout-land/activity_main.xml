@@ -746,12 +746,12 @@
         android:textAlignment="center"
         android:textColor="@color/color1"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/btnOption"
-        app:layout_constraintTop_toBottomOf="@+id/btnOption" />
+        app:layout_constraintStart_toEndOf="@+id/sb_Schoko"
+        app:layout_constraintTop_toTopOf="@+id/sb_Schoko" />
 
     <TextView
         android:id="@+id/textVSchoko"
-        android:layout_width="110dp"
+        android:layout_width="100dp"
         android:layout_height="30dp"
         android:text="Schoko"
         android:textAlignment="center"

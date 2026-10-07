@@ -21,7 +21,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private int clickNum = 0;
-    private int mongolianSushiChiliState = 0;
+    private int mongolianSushiLemonChiliState = 0;
     private final Handler handler = new Handler();
     private boolean tripleTestActive = false;
     private boolean doubleMTestActive = false;
@@ -1736,11 +1736,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             }
             else if(btnReis.isHovered()==true)
             {  btnReis.setHovered(false);
-                btnReis.setBackground(getDrawable(R.drawable.btn_extra_round));
+                btnReis.setBackground(getDrawable(R.drawable.btn_extra));
             }
-            else if (btnReis.getBackground()==getDrawable(R.drawable.btn_extra_blue_round))
+            else if (btnReis.getBackground()==getDrawable(R.drawable.btn_extra_blue))
             {
-                btnReis.setBackground(getDrawable(R.drawable.btn_extra_blue_round));
+                btnReis.setBackground(getDrawable(R.drawable.btn_extra_blue));
             }
             else {
                 btnReis.setActivated(true);
@@ -1754,7 +1754,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                 btnReis.setActivated(false);
                 btnReis.setSelected(false);
                 btnReis.setHovered(true);
-                btnReis.setBackground(getDrawable(R.drawable.btn_extra_blue_round));
+                btnReis.setBackground(getDrawable(R.drawable.btn_extra_blue));
 
                 return true;
             }
@@ -1773,11 +1773,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                 }
                 else if(btnSuppe.isHovered()==true)
                 {  btnSuppe.setHovered(false);
-                    btnSuppe.setBackground(getDrawable(R.drawable.btn_extra_round));
+                    btnSuppe.setBackground(getDrawable(R.drawable.btn_extra));
                 }
-                else if (btnSuppe.getBackground()==getDrawable(R.drawable.btn_extra_blue_round))
+                else if (btnSuppe.getBackground()==getDrawable(R.drawable.btn_extra_blue))
                 {
-                    btnSuppe.setBackground(getDrawable(R.drawable.btn_extra_blue_round));
+                    btnSuppe.setBackground(getDrawable(R.drawable.btn_extra_blue));
                 }
                 else {
                     btnSuppe.setActivated(true);
@@ -1791,7 +1791,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                 btnSuppe.setActivated(false);
                 btnSuppe.setSelected(false);
                 btnSuppe.setHovered(true);
-                btnSuppe.setBackground(getDrawable(R.drawable.btn_extra_blue_round));
+                btnSuppe.setBackground(getDrawable(R.drawable.btn_extra_blue));
 
                 return true;
             }
@@ -1881,7 +1881,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
         });
 
 
-//------------------------------Mongolian / Sushi / Chili---------------------------------------//
+//------------------------------Mongolian / Sushi / Lemon / Chili---------------------------------------//
         txtMongolisch = (TextView) findViewById(R.id.txtMongolisch);
         btnSchalenklein = (Button) findViewById(R.id.btnSchalenklein);
         btnSchalenklein.setOnClickListener(new View.OnClickListener(){
@@ -1890,26 +1890,31 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                 if (tripleTestActive) {
                     return;
                 }
-                if (mongolianSushiChiliState == 0) {
-                    mongolianSushiChiliState = 1;
+                if (mongolianSushiLemonChiliState == 0) {
+                    mongolianSushiLemonChiliState = 1;
                     btnSchalenklein.setActivated(true);
                     btnSchalenklein.setText("蒙古餐");
                     txtMongolisch.setText("Mongolisch");
                 }
-                else if (mongolianSushiChiliState == 1) {
-                    mongolianSushiChiliState = 2;
+                else if (mongolianSushiLemonChiliState == 1) {
+                    mongolianSushiLemonChiliState = 2;
                     btnSchalenklein.setText("寿 司");
                     txtMongolisch.setText("Sushi");
                 }
-                else if (mongolianSushiChiliState == 2) {
-                    mongolianSushiChiliState = 3;
+                else if (mongolianSushiLemonChiliState == 2) {
+                    mongolianSushiLemonChiliState = 3;
+                    btnSchalenklein.setText("柠檬");
+                    txtMongolisch.setText("Zitrone");
+                }
+                else if (mongolianSushiLemonChiliState == 3) {
+                    mongolianSushiLemonChiliState = 4;
                     btnSchalenklein.setActivated(false);
                     btnSchalenklein.setSelected(true);
                     btnSchalenklein.setText("剁椒");
                     txtMongolisch.setText("Chili");
                 }
                 else {
-                    mongolianSushiChiliState = 0;
+                    mongolianSushiLemonChiliState = 0;
                     btnSchalenklein.setSelected(false);
                     btnSchalenklein.setText("蒙古餐");
                     txtMongolisch.setText("Mongolisch");
