@@ -36,10 +36,10 @@
         android:id="@+id/txtRindfleischScharf"
         android:layout_width="115dp"
         android:layout_height="45dp"
-        android:text="Rindfleisch\nscharf"
+        android:text="Rindf Scharf"
         android:textAlignment="center"
         android:textColor="@color/color1"
-        android:textSize="15sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/RindfleischScharf"
         app:layout_constraintTop_toBottomOf="@+id/RindfleischScharf" />
 
@@ -56,12 +56,12 @@
 
     <TextView
         android:id="@+id/textView20"
-        android:layout_width="140dp"
+        android:layout_width="115dp"
         android:layout_height="45dp"
         android:text="Schwein\nsüßsauerscharf"
         android:textAlignment="center"
         android:textColor="@color/color1"
-        android:textSize="19sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/HühnerfilietKnoblauch"
         app:layout_constraintTop_toBottomOf="@+id/Broccoli" />
 
@@ -117,7 +117,7 @@
         android:text="Rind Zwiebel"
         android:textAlignment="center"
         android:textColor="@color/color1"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/RindFleischZwiebel"
         app:layout_constraintTop_toBottomOf="@+id/RindFleischZwiebel" />
 
@@ -134,7 +134,7 @@
 
     <Button
         android:id="@+id/Gebackene_Ente"
-        android:layout_width="120dp"
+        android:layout_width="115dp"
         android:layout_height="60dp"
         android:background="@drawable/btn_press_switch_berate"
         android:text="炸 鸭"
@@ -303,8 +303,8 @@
 
     <Button
         android:id="@+id/Soße_Süßsauer"
-        android:layout_width="100dp"
-        android:layout_height="37dp"
+        android:layout_width="115dp"
+        android:layout_height="39dp"
         android:background="@drawable/btn_extra"
         android:text="甜酸汁"
         android:textSize="27sp"
@@ -314,8 +314,8 @@
 
     <Button
         android:id="@+id/Soße_Erdnuss"
-        android:layout_width="100dp"
-        android:layout_height="37dp"
+        android:layout_width="115dp"
+        android:layout_height="39dp"
         android:background="@drawable/btn_extra2"
         android:text="花生汁"
         android:textSize="27sp"
@@ -325,8 +325,8 @@
 
     <Button
         android:id="@+id/Soß_Pikante"
-        android:layout_width="100dp"
-        android:layout_height="37dp"
+        android:layout_width="115dp"
+        android:layout_height="39dp"
         android:background="@drawable/btn_extra"
         android:text="黑  汁"
         android:textSize="27sp"
@@ -336,7 +336,7 @@
 
     <Button
         android:id="@+id/Gebackenes_Hähnchen"
-        android:layout_width="120dp"
+        android:layout_width="115dp"
         android:layout_height="60dp"
         android:background="@drawable/btn_press_switch_berate"
 
@@ -361,7 +361,7 @@
 
     <Button
         android:id="@+id/GebKäse"
-        android:layout_width="115dp"
+        android:layout_width="120dp"
         android:layout_height="60dp"
         android:background="@drawable/btn_press_switch_berate"
         android:text="奶 酪"
@@ -372,11 +372,11 @@
 
     <Button
         android:id="@+id/Unterlage"
-        android:layout_width="120dp"
+        android:layout_width="115dp"
         android:layout_height="60dp"
         android:background="@drawable/btn_press_switch"
         android:text="换 底"
-        android:textSize="36sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/Suppe"
         app:layout_constraintStart_toStartOf="@+id/Gebackenes_Hähnchen" />
@@ -394,7 +394,7 @@
 
     <Button
         android:id="@+id/btnSchalenklein"
-        android:layout_width="90dp"
+        android:layout_width="115dp"
         android:layout_height="60dp"
         android:background="@drawable/btn_extra2"
         android:text="蒙古餐"
@@ -417,10 +417,10 @@
     <Button
         android:id="@+id/TintenfischRing"
         android:layout_width="115dp"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         android:background="@drawable/btn_press_switch_berate"
         android:text="鱿 鱼"
-        android:textSize="36sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/omelett"
         app:layout_constraintTop_toTopOf="@+id/GebBanane" />
@@ -472,13 +472,13 @@
     <Button
         android:id="@+id/Gebackenesfischfilet"
         android:layout_width="115dp"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         android:background="@drawable/btn_press_switch_berate"
         android:text="鱼 片"
-        android:textSize="36sp"
+        android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/omelett"
-        app:layout_constraintTop_toTopOf="@+id/GebackeneAnanas" />
+        app:layout_constraintBottom_toBottomOf="@+id/GebackeneGarnelen"
+        app:layout_constraintStart_toStartOf="@+id/TintenfischRing" />
 
     <Button
         android:id="@+id/GebackeneGarnelen"
@@ -619,8 +619,8 @@
 
     <Button
         android:id="@+id/Reis"
-        android:layout_width="90dp"
-        android:layout_height="70dp"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
         android:background="@drawable/btn_extra"
         android:text="白饭"
         android:textSize="30sp"
@@ -641,56 +641,56 @@
 
     <Button
         android:id="@+id/Schoko"
-        android:layout_width="90dp"
-        android:layout_height="70dp"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
         android:background="@drawable/btn_extra2"
         android:text="巧克力"
-        android:textSize="26sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/GebackeneWantan"
         app:layout_constraintTop_toTopOf="@+id/Reis" />
 
     <Button
         android:id="@+id/Suppe"
-        android:layout_width="90dp"
-        android:layout_height="70dp"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
         android:background="@drawable/btn_extra"
         android:text="酸辣汤"
-        android:textSize="26sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/ChickenWings"
         app:layout_constraintTop_toTopOf="@+id/Reis" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="100dp"
+        android:layout_width="115dp"
         android:layout_height="25dp"
         android:text="Süß-Sauer"
         android:textAlignment="center"
         android:textColor="@color/color1"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/Soße_Süßsauer"
         app:layout_constraintTop_toBottomOf="@+id/Soße_Süßsauer" />
 
     <TextView
         android:id="@+id/textView37"
-        android:layout_width="100dp"
+        android:layout_width="115dp"
         android:layout_height="25dp"
         android:text="Pikante"
         android:textAlignment="center"
         android:textColor="@color/color1"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/Soß_Pikante"
         app:layout_constraintTop_toBottomOf="@+id/Soß_Pikante" />
 
     <TextView
         android:id="@+id/txtErdnuss"
-        android:layout_width="100dp"
+        android:layout_width="115dp"
         android:layout_height="25dp"
         android:text="Erdnuss"
         android:textAlignment="center"
         android:textColor="@color/color1"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/Soße_Erdnuss"
         app:layout_constraintTop_toBottomOf="@+id/Soße_Erdnuss" />
 
@@ -718,7 +718,7 @@
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="70dp"
+        android:layout_width="110dp"
         android:layout_height="30dp"
         android:text="Suppe"
         android:textAlignment="center"
@@ -741,19 +741,18 @@
 
     <TextView
         android:id="@+id/textVSchoko"
-        android:layout_width="70dp"
+        android:layout_width="110dp"
         android:layout_height="30dp"
-        android:layout_marginStart="56dp"
         android:text="Schoko"
         android:textAlignment="center"
         android:textColor="@color/color1"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintStart_toStartOf="@+id/Schoko"
         app:layout_constraintTop_toBottomOf="@+id/Suppe" />
 
     <TextView
         android:id="@+id/textView33"
-        android:layout_width="70dp"
+        android:layout_width="110dp"
         android:layout_height="30dp"
         android:text="Reis"
         android:textAlignment="center"
@@ -844,7 +843,7 @@
     <TextView
         android:id="@+id/txtHähchen"
         android:layout_width="120dp"
-        android:layout_height="40dp"
+        android:layout_height="35dp"
         android:text="Hähnchen"
         android:textAlignment="center"
         android:textColor="@color/color1"
@@ -877,11 +876,11 @@
     <TextView
         android:id="@+id/textView25"
         android:layout_width="115dp"
-        android:layout_height="45dp"
+        android:layout_height="25dp"
         android:text="Tintenfisch"
         android:textAlignment="center"
         android:textColor="@color/color1"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/MiniFrühlingsrolle"
         app:layout_constraintStart_toStartOf="@+id/TintenfischRing"
         app:layout_constraintTop_toBottomOf="@+id/TintenfischRing" />
@@ -899,19 +898,18 @@
 
     <TextView
         android:id="@+id/textView24"
-        android:layout_width="80dp"
+        android:layout_width="110dp"
         android:layout_height="30dp"
-        android:layout_marginEnd="20dp"
         android:text="Schaufel"
         android:textAlignment="center"
         android:textColor="@color/color1"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/Schalen_shao"
-        app:layout_constraintTop_toBottomOf="@+id/Schalen_shao" />
+        app:layout_constraintStart_toStartOf="@+id/Schalen_shao"
+        app:layout_constraintTop_toBottomOf="@+id/btnOption" />
 
     <TextView
         android:id="@+id/txtMongolisch"
-        android:layout_width="105dp"
+        android:layout_width="115dp"
         android:layout_height="30dp"
         android:text="Mongolisch"
         android:textAlignment="center"
@@ -1000,18 +998,18 @@
     <TextView
         android:id="@+id/textView28"
         android:layout_width="115dp"
-        android:layout_height="30dp"
+        android:layout_height="25dp"
         android:text="Fischfilet"
         android:textAlignment="center"
         android:textColor="@color/color1"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/Gebackenesfischfilet"
         app:layout_constraintTop_toBottomOf="@+id/Gebackenesfischfilet" />
 
     <TextView
         android:id="@+id/txtHühnerFilet"
         android:layout_width="115dp"
-        android:layout_height="40dp"
+        android:layout_height="35dp"
         android:text="Hühnerfilet"
         android:textAlignment="center"
         android:textColor="@color/color1"
