@@ -378,7 +378,7 @@
         android:text="换 底"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/Suppe"
+        app:layout_constraintBottom_toBottomOf="@+id/Reis"
         app:layout_constraintStart_toStartOf="@+id/Gebackenes_Hähnchen" />
 
     <Button
@@ -400,8 +400,8 @@
         android:text="蒙古餐"
         android:textSize="26sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/Soße_Erdnuss"
-        app:layout_constraintTop_toTopOf="@+id/Unterlage" />
+        app:layout_constraintStart_toStartOf="@+id/Gebackenesfischfilet"
+        app:layout_constraintTop_toTopOf="@+id/Reis" />
 
     <Button
         android:id="@+id/SchalenGroß"
@@ -658,7 +658,7 @@
         android:text="巧克力"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/Gebackenesfischfilet"
+        app:layout_constraintStart_toStartOf="@+id/ChickenWings"
         app:layout_constraintTop_toTopOf="@+id/Reis" />
 
     <Button
@@ -669,8 +669,8 @@
         android:text="酸辣汤"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/ChickenWings"
-        app:layout_constraintTop_toTopOf="@+id/Reis" />
+        app:layout_constraintStart_toStartOf="@+id/Soße_Erdnuss"
+        app:layout_constraintTop_toTopOf="@+id/Unterlage" />
 
     <TextView
         android:id="@+id/textView"
@@ -746,8 +746,8 @@
         android:textAlignment="center"
         android:textColor="@color/color1"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/Suppe" />
+        app:layout_constraintStart_toStartOf="@+id/btnOption"
+        app:layout_constraintTop_toBottomOf="@+id/btnOption" />
 
     <TextView
         android:id="@+id/textVSchoko"
@@ -758,7 +758,7 @@
         android:textColor="@color/color1"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/Schoko"
-        app:layout_constraintTop_toBottomOf="@+id/Suppe" />
+        app:layout_constraintTop_toBottomOf="@+id/Schoko" />
 
     <TextView
         android:id="@+id/textView33"
@@ -936,8 +936,8 @@
         android:textAlignment="center"
         android:textColor="@color/color1"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/Soße_Erdnuss"
-        app:layout_constraintTop_toBottomOf="@+id/Unterlage" />
+        app:layout_constraintStart_toStartOf="@+id/btnSchalenklein"
+        app:layout_constraintTop_toBottomOf="@+id/btnSchalenklein" />
 
     <TextView
         android:id="@+id/txtSchaleGroß"

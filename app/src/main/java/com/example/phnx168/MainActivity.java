@@ -2035,17 +2035,16 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
         btnGebBanane.startAnimation(animation);
         btnGebackeneAnanas.setHovered(true);
         btnGebackeneAnanas.startAnimation(animation);
+        // Test effects follow physical slots after the dish position swaps.
         btnSuppe.setHovered(true);
         btnSuppe.startAnimation(animation);
-        btnSchoko.clearAnimation();
-        btnSchoko.setHovered(false);
+        btnSchoko.setHovered(true);
+        btnSchoko.startAnimation(animation);
         btnOption.setHovered(true);
         btnOption.startAnimation(animation);
 
-        btnSchalenklein.setActivated(false);
-        btnSchalenklein.setSelected(false);
-        btnSchalenklein.setHovered(true);
-        btnSchalenklein.startAnimation(animation);
+        btnSchalenklein.clearAnimation();
+        btnSchalenklein.setHovered(false);
 
         btnBohnen.setHovered(true);
         btnBohnen.startAnimation(animation);
@@ -2101,6 +2100,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
         btnGebackeneAnanas.setHovered(false);
         btnSuppe.setHovered(false);
         btnSchoko.setHovered(false);
+        btnSchalenklein.setHovered(false);
         btnOption.setHovered(false);
 
         btnBohnen.setHovered(false);
@@ -2131,20 +2131,18 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
         btnCurryHuhn.setBackground(getDrawable(R.drawable.btn_press_switch));
         doubleMTestActive = false;
 
+        // The original Mongolian slot now contains soup, so the green blinking stays on that slot.
         btnSchalenklein.clearAnimation();
-        btnSchalenklein.setActivated(false);
-        btnSchalenklein.setSelected(false);
-        btnSchalenklein.setHovered(true);
-        btnSchalenklein.setText("蒙古餐");
-        txtMongolisch.setText("Mongolisch");
-        btnSchalenklein.startAnimation(animation);
+        btnSuppe.setActivated(false);
+        btnSuppe.setSelected(false);
+        btnSuppe.setHovered(true);
+        btnSuppe.startAnimation(animation);
 
         btnGebackeneAnanas.clearAnimation();
         btnAchtKostbarkeiten.clearAnimation();
         btnCurryHuhn.clearAnimation();
         btnGebKartoffeln.clearAnimation();
         btnGebEnte.clearAnimation();
-        btnSuppe.clearAnimation();
         btnOption.clearAnimation();
 
         btnBroccoli.setBackground(getDrawable(R.drawable.love_button));
