@@ -22,16 +22,10 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     private int clickNum = 0;
     private int mongolianSushiChiliState = 0;
-    private Handler handler = new Handler();
-    private final Handler exitHandler = new Handler();
+    private final Handler handler = new Handler();
     private boolean tripleTestActive = false;
     private boolean doubleMTestActive = false;
-    private final Runnable exitAfterHold = new Runnable() {
-        @Override
-        public void run() {
-            finish();
-        }
-    };
+    private boolean sesameHoldActionTriggered = false;
     private Button btnGebEnte,btnGebHänchen,btnGebackeneHühnerFilet,btnGebNudel,btnGebReis,btnGebGemüse,btnGebKartoffeln,btnChampignons,btnGebackeneAnanas;
     private Button btnBohnen,btnHühnerfiletSpargel,btnGarnelenScharf,btnChickenWings,btnRindFleischZwiebel,btnBroccoli;
     private Button btnHühnerfilietKnoblauch,btnAchtKostbarkeiten,btnHühnerfleischKungbo,btnomelett,btnCurryHuhn,btnGebKäse;
@@ -142,27 +136,56 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
-        //-----------------------------Sesame Balls long-press selection----------------------------------------
+        //-----------------------------Sesame Balls gestures----------------------------------------
+        final Runnable startDoubleTestAfterHold = new Runnable() {
+            @Override
+            public void run() {
+                if (!doubleMTestActive && !tripleTestActive) {
+                    sesameHoldActionTriggered = true;
+                    startDoubleTest(animation);
+                }
+            }
+        };
+        final Runnable startTripleTestAfterHold = new Runnable() {
+            @Override
+            public void run() {
+                if (doubleMTestActive && !tripleTestActive) {
+                    sesameHoldActionTriggered = true;
+                    startTripleTest(animation);
+                }
+            }
+        };
+
         btnOption.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                if (!tripleTestActive) {
-                    return false;
-                }
                 switch (event.getActionMasked()) {
                     case MotionEvent.ACTION_DOWN:
-                        exitHandler.removeCallbacks(exitAfterHold);
-                        exitHandler.postDelayed(exitAfterHold, 3000L);
+                        sesameHoldActionTriggered = false;
+                        handler.removeCallbacks(startDoubleTestAfterHold);
+                        handler.removeCallbacks(startTripleTestAfterHold);
+                        if (!tripleTestActive) {
+                            if (doubleMTestActive) {
+                                handler.postDelayed(startTripleTestAfterHold, 3000L);
+                            } else {
+                                handler.postDelayed(startDoubleTestAfterHold, 10000L);
+                            }
+                        }
                         break;
                     case MotionEvent.ACTION_MOVE:
                         if (event.getX() < 0 || event.getY() < 0
                                 || event.getX() >= v.getWidth() || event.getY() >= v.getHeight()) {
-                            exitHandler.removeCallbacks(exitAfterHold);
+                            handler.removeCallbacks(startDoubleTestAfterHold);
+                            handler.removeCallbacks(startTripleTestAfterHold);
                         }
                         break;
                     case MotionEvent.ACTION_UP:
+                        handler.removeCallbacks(startDoubleTestAfterHold);
+                        handler.removeCallbacks(startTripleTestAfterHold);
+                        break;
                     case MotionEvent.ACTION_CANCEL:
-                        exitHandler.removeCallbacks(exitAfterHold);
+                        handler.removeCallbacks(startDoubleTestAfterHold);
+                        handler.removeCallbacks(startTripleTestAfterHold);
                         break;
                     default:
                         break;
@@ -170,226 +193,53 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-        btnOption.setOnLongClickListener(new View.OnLongClickListener(){
-            public boolean onLongClick(View v){
-                if (tripleTestActive) {
-                    return true;
-                }
-                if (btnOption.isHovered()) {
-                    setSesameTenBalls(false);
-                } else {
+
+        btnOption.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // Show the normal ten-ball state immediately without stopping the 10-second test timer.
+                if (!doubleMTestActive && !tripleTestActive && !sesameHoldActionTriggered) {
                     vibrator.vibrate(500);
                     setSesameTenBalls(true);
                 }
-                //;// 震动开
-                //Toast.makeText(MainActivity.this,"长按点击",Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
 
-// ---------------------------------------双击---------------------------------------------------------------
         btnOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (tripleTestActive) {
+                    clickNum++;
+                    if (clickNum == 1) {
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                clickNum = 0;
+                            }
+                        }, 300L);
+                    } else if (clickNum == 2) {
+                        handler.removeCallbacksAndMessages(null);
+                        clickNum = 0;
+                        finish();
+                    }
                     return;
                 }
-                clickNum++;
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (clickNum == 1) {
-                            Log.d("btn listener:", "btn is clicked!");
-                            if (btnOption.isActivated()) {
-                                btnOption.setActivated(false);
-                                btnOption.setSelected(true);
-                            } else if (btnOption.isSelected() || btnOption.isHovered()) {
-                                setSesameTenBalls(false);
-                            } else {
-                                btnOption.setActivated(true);
-                            }
-                        }else if(clickNum==2){       // Double-tap test
-                            Log.d("btn listener:", "btn is doubleClicked!");
-                            setSesameTenBalls(false);
 
-                            btnAchtKostbarkeiten.setHovered(true);
-                            btnAchtKostbarkeiten.startAnimation(animation);
-                            btnRindFleischZwiebel.setHovered(true);
-                            btnRindFleischZwiebel.startAnimation(animation);
-                            btnBroccoli.setHovered(true);
-                            btnBroccoli.startAnimation(animation);
-                            btnGebBanane.setHovered(true);
-                            btnGebBanane.startAnimation(animation);
-                            btnGebackeneAnanas.setHovered(true);
-                            btnGebackeneAnanas.startAnimation(animation);
-                            btnSuppe.setHovered(true);
-                            btnSuppe.startAnimation(animation);
-                            btnSchoko.setHovered(true);
-                            btnSchoko.startAnimation(animation);
-                            // The Mongolian/Sushi/Chili button joins the blue blinking test.
-                            btnSchalenklein.setActivated(false);
-                            btnSchalenklein.setSelected(false);
-                            btnSchalenklein.setHovered(true);
-                            btnSchalenklein.startAnimation(animation);
+                // Ignore normal clicks while the first test is active; a 3-second hold enters the second test.
+                if (doubleMTestActive) {
+                    return;
+                }
 
-                            btnBohnen.setHovered(true);
-                            btnBohnen.startAnimation(animation);
-                            btnGebKartoffeln.setHovered(true);
-                            btnGebKartoffeln.startAnimation(animation);
-                            btnGebReis.setHovered(true);
-                            btnGebReis.startAnimation(animation);
-                            btnGebNudel.setHovered(true);
-                            btnGebNudel.startAnimation(animation);
-                            btnGebEnte.setHovered(true);
-                            btnGebEnte.startAnimation(animation);
-                            btnGebackeneHühnerFilet.setHovered(true);
-                            btnGebackeneHühnerFilet.startAnimation(animation);
-                            btnUnterlage.setHovered(true);
-                            btnUnterlage.startAnimation(animation);
-                            btnSchalenGroß.setHovered(true);
-                            btnSchalenGroß.startAnimation(animation);
-
-                            // Exclude the spatula button from green blinking in this test.
-                            btnSchalen_shao.setHovered(false);
-                            btnSchalen_shao.clearAnimation();
-
-                            // Reuse the existing pink test background for the seven M-shaped buttons.
-                            for (Button pinkButton : new Button[]{
-                                    btnHühnerfleischKungbo, btnMiniFrühlingsrolle,
-                                    btnGebackeneWantan, btnCurryHuhn,
-                                    btnHühnerfiletSpargel, btnGebKäse, btnGebackeneGarnelen}) {
-                                pinkButton.clearAnimation();
-                                pinkButton.setActivated(false);
-                                pinkButton.setSelected(false);
-                                pinkButton.setHovered(false);
-                                pinkButton.setBackground(getDrawable(R.drawable.love_button));
-                                pinkButton.setEnabled(false);
-                                pinkButton.startAnimation(animation);
-                            }
-                            doubleMTestActive = true;
-
-                        }
-//---------------------------------Love--cc----------三连击------------------------------------
-                        else if (clickNum==3){
-                            tripleTestActive = true;
-                            btnOption.setHovered(false);
-                            btnOption.setActivated(false);
-                            btnOption.setSelected(false);
-
-                            btnCurryHuhn.setHovered(false);
-                            btnAchtKostbarkeiten.setHovered(false);
-                            btnRindFleischZwiebel.setHovered(false);
-                            btnBroccoli.setHovered(false);
-                            btnGebBanane.setHovered(false);
-                            btnGebackeneAnanas.setHovered(false);
-                            btnSuppe.setHovered(false);
-                            btnSchoko.setHovered(false);
-                            btnOption.setHovered(false);
-
-
-                            btnBohnen.setHovered(false);
-                            btnGebKartoffeln.setHovered(false);
-                            btnGebReis.setHovered(false);
-                            btnGebNudel.setHovered(false);
-                            btnGebEnte.setHovered(false);
-                            btnGebackeneHühnerFilet.setHovered(false);
-                            btnSchalen_shao.setHovered(false);
-                            btnUnterlage.setHovered(false);
-                            btnSchalen_shao.setHovered(false);
-                            btnSchalenGroß.setHovered(false);
-                            // Clear double-test-only pink effects without changing direct triple taps.
-                            if (doubleMTestActive) {
-                                for (Button normalButton : new Button[]{
-                                        btnMiniFrühlingsrolle, btnGebackeneWantan,
-                                        btnGebackeneGarnelen}) {
-                                    normalButton.clearAnimation();
-                                    normalButton.setEnabled(true);
-                                    normalButton.setActivated(false);
-                                    normalButton.setSelected(false);
-                                    normalButton.setHovered(false);
-                                    normalButton.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
-                                }
-                                // Curry chicken uses its own regular button background.
-                                btnCurryHuhn.clearAnimation();
-                                btnCurryHuhn.setEnabled(true);
-                                btnCurryHuhn.setActivated(false);
-                                btnCurryHuhn.setSelected(false);
-                                btnCurryHuhn.setHovered(false);
-                                btnCurryHuhn.setBackground(getDrawable(R.drawable.btn_press_switch));
-                                doubleMTestActive = false;
-                            }
-                            // Show Mongolian in the green blinking test, regardless of the previous dish.
-                            btnSchalenklein.clearAnimation();
-                            btnSchalenklein.setActivated(false);
-                            btnSchalenklein.setSelected(false);
-                            btnSchalenklein.setHovered(true);
-                            btnSchalenklein.setText("蒙古餐");
-                            txtMongolisch.setText("Mongolisch");
-                            btnSchalenklein.startAnimation(animation);
-
-                            btnGebackeneAnanas.clearAnimation();
-                            btnAchtKostbarkeiten.clearAnimation();
-                            btnCurryHuhn.clearAnimation();
-                            btnGebKartoffeln.clearAnimation();
-                            btnGebEnte.clearAnimation();
-                            btnCurryHuhn.clearAnimation();
-                            btnSuppe.clearAnimation();
-                            btnOption.clearAnimation();
-
-                            //btnGebackeneHühnerFilet.clearAnimation();
-
-                            btnBroccoli.setBackground(getDrawable(R.drawable.love_button));
-                            btnBroccoli.startAnimation(animation);
-                            btnRindFleischZwiebel.setBackground(getDrawable(R.drawable.love_button));
-                            btnRindFleischZwiebel.startAnimation(animation);
-                            btnomelett.setBackground(getDrawable(R.drawable.love_button));
-                            btnomelett.startAnimation(animation);
-                            btnHühnerfleischKungbo.setBackground(getDrawable(R.drawable.love_button));
-                            btnHühnerfleischKungbo.startAnimation(animation);
-                            btnHühnerfiletSpargel.setBackground(getDrawable(R.drawable.love_button));
-                            btnHühnerfiletSpargel.startAnimation(animation);
-                            btnGebKäse.setBackground(getDrawable(R.drawable.love_button));
-                            btnGebKäse.startAnimation(animation);
-                            btnGebBanane.setBackground(getDrawable(R.drawable.love_button));
-                            btnGebBanane.startAnimation(animation);
-                            // Chicken Wings replace spicy beef in the pink blinking test.
-                            btnChickenWings.setActivated(false);
-                            btnChickenWings.setSelected(false);
-                            btnChickenWings.setHovered(false);
-                            btnChickenWings.setBackground(getDrawable(R.drawable.love_button));
-                            btnChickenWings.setEnabled(false);
-                            btnChickenWings.startAnimation(animation);
-                            btnGebackenesfischfilet.setBackground(getDrawable(R.drawable.love_button));
-                            btnGebackenesfischfilet.startAnimation(animation);
-                            btnSchoko.setBackground(getDrawable(R.drawable.love_button));
-                            btnSchoko.startAnimation(animation);
-
-                            btnBohnen.setActivated(true);
-                            btnChampignons.setActivated(true);
-                            btnChampignons.startAnimation(animation);
-                            btnChickenNuggets.setActivated(true);
-                            btnChickenNuggets.startAnimation(animation);
-                            btnGebackeneHühnerFilet.setActivated(true);
-                            btnGebHänchen.setActivated(true);
-                            btnGebHänchen.startAnimation(animation);
-                            btnGebReis.setActivated(true);
-                            btnGebNudel.setActivated(true);
-                            btnSoße_Erdnuss.setActivated(true);
-                            btnSoße_Erdnuss.startAnimation(animation);
-                            btnSoß_Süßsauer.setActivated(true);
-                            btnSoß_Süßsauer.startAnimation(animation);
-                            btnSoß_Pikante.setActivated(true);
-                            btnSoß_Pikante.startAnimation(animation);
-
-                            btnSchalen_shao.setHovered(true);
-                            btnSchalen_shao.startAnimation(animation);
-                            btnSchalenGroß.setHovered(true);
-                            btnUnterlage.setHovered(true);
-                        }
-                        //防止handler引起的内存泄漏
-                        handler.removeCallbacksAndMessages(null);
-                        clickNum = 0;}
-                },300);
+                Log.d("btn listener:", "btn is clicked!");
+                if (btnOption.isActivated()) {
+                    btnOption.setActivated(false);
+                    btnOption.setSelected(true);
+                } else if (btnOption.isSelected() || btnOption.isHovered()) {
+                    setSesameTenBalls(false);
+                } else {
+                    btnOption.setActivated(true);
+                }
             }
         });
  //----------------------------------------------------炸鸭---fertig-------------------------------------------------------//
@@ -1771,11 +1621,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             }
             else if(btnSoß_Pikante.isHovered()==true)
             {  btnSoß_Pikante.setHovered(false);
-                btnSoß_Pikante.setBackground(getDrawable(R.drawable.btn_extra));
+                btnSoß_Pikante.setBackground(getDrawable(R.drawable.btn_extra_black_border));
             }
             else if (btnSoß_Pikante.getBackground()==getDrawable(R.drawable.btn_extra_blue))
             {
-                btnSoß_Pikante.setBackground(getDrawable(R.drawable.btn_extra_blue));
+                btnSoß_Pikante.setBackground(getDrawable(R.drawable.btn_extra_black_border));
             }
             else {
                 btnSoß_Pikante.setActivated(true);
@@ -1785,7 +1635,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
 
             btnSoß_Pikante.setOnLongClickListener(new View.OnLongClickListener(){
             public boolean onLongClick(View v){
-            btnSoß_Pikante.setBackground(getDrawable(R.drawable.btn_extra_blue));
+            btnSoß_Pikante.setBackground(getDrawable(R.drawable.btn_extra_black_border));
             btnSoß_Pikante.setActivated(false);
             btnSoß_Pikante.setSelected(false);
             btnSoß_Pikante.setHovered(true);
@@ -1808,11 +1658,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             }
             else if(btnSoß_Süßsauer.isHovered()==true)
             {  btnSoß_Süßsauer.setHovered(false);
-                btnSoß_Süßsauer.setBackground(getDrawable(R.drawable.btn_extra));
+                btnSoß_Süßsauer.setBackground(getDrawable(R.drawable.btn_extra_tomato_border));
             }
             else if (btnSoß_Süßsauer.getBackground()==getDrawable(R.drawable.btn_extra_blue))
             {
-                btnSoß_Süßsauer.setBackground(getDrawable(R.drawable.btn_extra_blue));
+                btnSoß_Süßsauer.setBackground(getDrawable(R.drawable.btn_extra_tomato_border));
             }
             else {
                 btnSoß_Süßsauer.setActivated(true);
@@ -1822,12 +1672,12 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
 
         btnSoß_Süßsauer.setOnLongClickListener(new View.OnLongClickListener(){
             public boolean onLongClick(View v){
-                btnSoß_Süßsauer.setBackground(getDrawable(R.drawable.btn_extra_blue));
+                btnSoß_Süßsauer.setBackground(getDrawable(R.drawable.btn_extra_tomato_border));
             vibrator.vibrate(100);
             btnSoß_Süßsauer.setActivated(false);
             btnSoß_Süßsauer.setSelected(false);
             btnSoß_Süßsauer.setHovered(true);
-                btnSoß_Süßsauer.setBackground(getDrawable(R.drawable.btn_extra_blue));
+                btnSoß_Süßsauer.setBackground(getDrawable(R.drawable.btn_extra_tomato_border));
 
                 return true;
             }
@@ -1843,22 +1693,17 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             if (btnSoße_Erdnuss.isActivated()==true){
                 btnSoße_Erdnuss.setActivated(false);
                 btnSoße_Erdnuss.setSelected(true);
-                txtErdnuss.setText("Schale");
-                btnSoße_Erdnuss.setText("换 兜");
             }
             else if (btnSoße_Erdnuss.isSelected()==true){
                 btnSoße_Erdnuss.setSelected(false);
-                txtErdnuss.setText("Erdnuss");
-                btnSoße_Erdnuss.setText("花生汁");
-
             }
             else if(btnSoße_Erdnuss.isHovered()==true)
             {  btnSoße_Erdnuss.setHovered(false);
-                btnSoße_Erdnuss.setBackground(getDrawable(R.drawable.btn_extra2));
+                btnSoße_Erdnuss.setBackground(getDrawable(R.drawable.btn_extra2_coffee_border));
             }
             else if (btnSoße_Erdnuss.getBackground()==getDrawable(R.drawable.btn_extra_blue))
             {
-                btnSoße_Erdnuss.setBackground(getDrawable(R.drawable.btn_extra_blue));
+                btnSoße_Erdnuss.setBackground(getDrawable(R.drawable.btn_extra2_coffee_border));
             }
             else {
                 btnSoße_Erdnuss.setActivated(true);
@@ -1872,7 +1717,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             btnSoße_Erdnuss.setActivated(false);
             btnSoße_Erdnuss.setSelected(false);
             btnSoße_Erdnuss.setHovered(true);
-            btnSoße_Erdnuss.setBackground(getDrawable(R.drawable.btn_extra_blue));
+            btnSoße_Erdnuss.setBackground(getDrawable(R.drawable.btn_extra2_coffee_border));
 
                 return true;
             }
@@ -2175,6 +2020,183 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
         });
         Log.d("正常启动", "onCreate() Called"); // Notification in Log
     }
+    // Start the test that was previously triggered by a double tap.
+    private void startDoubleTest(Animation animation) {
+        Log.d("btn listener:", "start first sesame test after 10-second hold");
+        setSesameTenBalls(false);
+
+        btnAchtKostbarkeiten.setHovered(true);
+        btnAchtKostbarkeiten.startAnimation(animation);
+        btnRindFleischZwiebel.setHovered(true);
+        btnRindFleischZwiebel.startAnimation(animation);
+        btnBroccoli.setHovered(true);
+        btnBroccoli.startAnimation(animation);
+        btnGebBanane.setHovered(true);
+        btnGebBanane.startAnimation(animation);
+        btnGebackeneAnanas.setHovered(true);
+        btnGebackeneAnanas.startAnimation(animation);
+        btnSuppe.setHovered(true);
+        btnSuppe.startAnimation(animation);
+        btnSchoko.clearAnimation();
+        btnSchoko.setHovered(false);
+        btnOption.setHovered(true);
+        btnOption.startAnimation(animation);
+
+        btnSchalenklein.setActivated(false);
+        btnSchalenklein.setSelected(false);
+        btnSchalenklein.setHovered(true);
+        btnSchalenklein.startAnimation(animation);
+
+        btnBohnen.setHovered(true);
+        btnBohnen.startAnimation(animation);
+        btnGebKartoffeln.setHovered(true);
+        btnGebKartoffeln.startAnimation(animation);
+        btnGebReis.setHovered(true);
+        btnGebReis.startAnimation(animation);
+        btnGebNudel.setHovered(true);
+        btnGebNudel.startAnimation(animation);
+        btnGebEnte.setHovered(true);
+        btnGebEnte.startAnimation(animation);
+        btnGebackeneHühnerFilet.setHovered(true);
+        btnGebackeneHühnerFilet.startAnimation(animation);
+        btnUnterlage.setHovered(true);
+        btnUnterlage.startAnimation(animation);
+        btnSchalenGroß.setHovered(true);
+        btnSchalenGroß.startAnimation(animation);
+
+        btnSchalen_shao.setHovered(false);
+        btnSchalen_shao.clearAnimation();
+
+        for (Button pinkButton : new Button[]{
+                btnHühnerfleischKungbo, btnMiniFrühlingsrolle,
+                btnGebackeneWantan, btnCurryHuhn,
+                btnHühnerfiletSpargel, btnGebKäse, btnGebackeneGarnelen}) {
+            pinkButton.clearAnimation();
+            pinkButton.setActivated(false);
+            pinkButton.setSelected(false);
+            pinkButton.setHovered(false);
+            pinkButton.setBackground(getDrawable(R.drawable.love_button));
+            pinkButton.setEnabled(false);
+            pinkButton.startAnimation(animation);
+        }
+        doubleMTestActive = true;
+    }
+
+    // Start the test that was previously triggered by a triple tap.
+    private void startTripleTest(Animation animation) {
+        if (!doubleMTestActive || tripleTestActive) {
+            return;
+        }
+
+        tripleTestActive = true;
+        btnOption.setHovered(false);
+        btnOption.setActivated(false);
+        btnOption.setSelected(false);
+
+        btnCurryHuhn.setHovered(false);
+        btnAchtKostbarkeiten.setHovered(false);
+        btnRindFleischZwiebel.setHovered(false);
+        btnBroccoli.setHovered(false);
+        btnGebBanane.setHovered(false);
+        btnGebackeneAnanas.setHovered(false);
+        btnSuppe.setHovered(false);
+        btnSchoko.setHovered(false);
+        btnOption.setHovered(false);
+
+        btnBohnen.setHovered(false);
+        btnGebKartoffeln.setHovered(false);
+        btnGebReis.setHovered(false);
+        btnGebNudel.setHovered(false);
+        btnGebEnte.setHovered(false);
+        btnGebackeneHühnerFilet.setHovered(false);
+        btnSchalen_shao.setHovered(false);
+        btnUnterlage.setHovered(false);
+        btnSchalenGroß.setHovered(false);
+
+        for (Button normalButton : new Button[]{
+                btnMiniFrühlingsrolle, btnGebackeneWantan,
+                btnGebackeneGarnelen}) {
+            normalButton.clearAnimation();
+            normalButton.setEnabled(true);
+            normalButton.setActivated(false);
+            normalButton.setSelected(false);
+            normalButton.setHovered(false);
+            normalButton.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
+        }
+        btnCurryHuhn.clearAnimation();
+        btnCurryHuhn.setEnabled(true);
+        btnCurryHuhn.setActivated(false);
+        btnCurryHuhn.setSelected(false);
+        btnCurryHuhn.setHovered(false);
+        btnCurryHuhn.setBackground(getDrawable(R.drawable.btn_press_switch));
+        doubleMTestActive = false;
+
+        btnSchalenklein.clearAnimation();
+        btnSchalenklein.setActivated(false);
+        btnSchalenklein.setSelected(false);
+        btnSchalenklein.setHovered(true);
+        btnSchalenklein.setText("蒙古餐");
+        txtMongolisch.setText("Mongolisch");
+        btnSchalenklein.startAnimation(animation);
+
+        btnGebackeneAnanas.clearAnimation();
+        btnAchtKostbarkeiten.clearAnimation();
+        btnCurryHuhn.clearAnimation();
+        btnGebKartoffeln.clearAnimation();
+        btnGebEnte.clearAnimation();
+        btnSuppe.clearAnimation();
+        btnOption.clearAnimation();
+
+        btnBroccoli.setBackground(getDrawable(R.drawable.love_button));
+        btnBroccoli.startAnimation(animation);
+        btnRindFleischZwiebel.setBackground(getDrawable(R.drawable.love_button));
+        btnRindFleischZwiebel.startAnimation(animation);
+        btnomelett.setBackground(getDrawable(R.drawable.love_button));
+        btnomelett.startAnimation(animation);
+        btnHühnerfleischKungbo.setBackground(getDrawable(R.drawable.love_button));
+        btnHühnerfleischKungbo.startAnimation(animation);
+        btnHühnerfiletSpargel.setBackground(getDrawable(R.drawable.love_button));
+        btnHühnerfiletSpargel.startAnimation(animation);
+        btnGebKäse.setBackground(getDrawable(R.drawable.love_button));
+        btnGebKäse.startAnimation(animation);
+        btnGebBanane.setBackground(getDrawable(R.drawable.love_button));
+        btnGebBanane.startAnimation(animation);
+
+        btnChickenWings.setActivated(false);
+        btnChickenWings.setSelected(false);
+        btnChickenWings.setHovered(false);
+        btnChickenWings.setBackground(getDrawable(R.drawable.love_button));
+        btnChickenWings.setEnabled(false);
+        btnChickenWings.startAnimation(animation);
+        btnGebackenesfischfilet.setBackground(getDrawable(R.drawable.love_button));
+        btnGebackenesfischfilet.startAnimation(animation);
+        btnSchoko.clearAnimation();
+        btnOption.setBackground(getDrawable(R.drawable.love_button));
+        btnOption.startAnimation(animation);
+
+        btnBohnen.setActivated(true);
+        btnChampignons.setActivated(true);
+        btnChampignons.startAnimation(animation);
+        btnChickenNuggets.setActivated(true);
+        btnChickenNuggets.startAnimation(animation);
+        btnGebackeneHühnerFilet.setActivated(true);
+        btnGebHänchen.setActivated(true);
+        btnGebHänchen.startAnimation(animation);
+        btnGebReis.setActivated(true);
+        btnGebNudel.setActivated(true);
+        btnSoße_Erdnuss.setActivated(true);
+        btnSoße_Erdnuss.startAnimation(animation);
+        btnSoß_Süßsauer.setActivated(true);
+        btnSoß_Süßsauer.startAnimation(animation);
+        btnSoß_Pikante.setActivated(true);
+        btnSoß_Pikante.startAnimation(animation);
+
+        btnSchalen_shao.setHovered(true);
+        btnSchalen_shao.startAnimation(animation);
+        btnSchalenGroß.setHovered(true);
+        btnUnterlage.setHovered(true);
+    }
+
     // Keep the button and its German label in sync when the ten-ball option changes.
     private void setSesameTenBalls(boolean tenBalls) {
         txtSesam.setText(tenBalls ? "10 Bällchen" : "Sesambällchen");
@@ -2186,7 +2208,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
 
     @Override
     protected void onDestroy() {
-        exitHandler.removeCallbacks(exitAfterHold);
+        handler.removeCallbacksAndMessages(null);
         super.onDestroy();
     }
 
