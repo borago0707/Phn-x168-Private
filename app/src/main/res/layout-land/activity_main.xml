@@ -50,18 +50,18 @@
         android:text="Curry Huhn"
         android:textAlignment="center"
         android:textColor="@color/color1"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/CurryHuhn"
         app:layout_constraintTop_toBottomOf="@+id/Broccoli" />
 
     <TextView
         android:id="@+id/textView20"
-        android:layout_width="115dp"
+        android:layout_width="130dp"
         android:layout_height="45dp"
         android:text="Schwein\nsüßsauerscharf"
         android:textAlignment="center"
         android:textColor="@color/color1"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/HühnerfilietKnoblauch"
         app:layout_constraintTop_toBottomOf="@+id/Broccoli" />
 
@@ -389,8 +389,8 @@
         android:text="换铲"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/GebackeneGarnelen"
-        app:layout_constraintTop_toTopOf="@+id/SchalenGroß" />
+        app:layout_constraintStart_toStartOf="@+id/GebackeneGarnelen"
+        app:layout_constraintTop_toTopOf="@+id/btnOption" />
 
     <Button
         android:id="@+id/btnSchalenklein"
@@ -424,6 +424,17 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/omelett"
         app:layout_constraintTop_toTopOf="@+id/GebBanane" />
+
+    <Button
+        android:id="@+id/GebackenesGemuese"
+        android:layout_width="115dp"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_press_switch_berate"
+        android:text="炸蔬菜"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/TintenfischRing"
+        app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
     <Button
         android:id="@+id/MiniFrühlingsrolle"
@@ -477,8 +488,8 @@
         android:text="鱼 片"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/GebackeneGarnelen"
-        app:layout_constraintStart_toStartOf="@+id/TintenfischRing" />
+        app:layout_constraintBottom_toBottomOf="@+id/GebackeneWantan"
+        app:layout_constraintStart_toStartOf="@+id/GebackenesGemuese" />
 
     <Button
         android:id="@+id/GebackeneGarnelen"
@@ -729,15 +740,15 @@
 
     <TextView
         android:id="@+id/txtSesam"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="30dp"
+        android:layout_marginStart="8dp"
         android:text="Sesambällchen"
         android:textAlignment="center"
         android:textColor="@color/color1"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/btnOption"
-        app:layout_constraintStart_toStartOf="@+id/btnOption"
-        app:layout_constraintTop_toBottomOf="@+id/Schoko" />
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/sb_Schoko"
+        tools:layout_editor_absoluteY="546dp" />
 
     <TextView
         android:id="@+id/textVSchoko"
@@ -884,6 +895,17 @@
         app:layout_constraintStart_toEndOf="@+id/MiniFrühlingsrolle"
         app:layout_constraintStart_toStartOf="@+id/TintenfischRing"
         app:layout_constraintTop_toBottomOf="@+id/TintenfischRing" />
+
+    <TextView
+        android:id="@+id/textGebackenesGemuese"
+        android:layout_width="115dp"
+        android:layout_height="25dp"
+        android:text="Geb. Gemüse"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/GebackenesGemuese"
+        app:layout_constraintTop_toBottomOf="@+id/GebackenesGemuese" />
 
     <TextView
         android:id="@+id/txtUnterlage"

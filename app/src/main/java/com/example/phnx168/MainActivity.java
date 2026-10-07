@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnGebEnte,btnGebHänchen,btnGebackeneHühnerFilet,btnGebNudel,btnGebReis,btnGebGemüse,btnGebKartoffeln,btnChampignons,btnGebackeneAnanas;
     private Button btnBohnen,btnHühnerfiletSpargel,btnGarnelenScharf,btnChickenWings,btnRindFleischZwiebel,btnBroccoli;
     private Button btnHühnerfilietKnoblauch,btnAchtKostbarkeiten,btnHühnerfleischKungbo,btnomelett,btnCurryHuhn,btnGebKäse;
-    private Button btnGebackeneGarnelen, btnChickenNuggets, btnGebBanane, btnpommes,btnTintenfischRing;
+    private Button btnGebackeneGarnelen, btnChickenNuggets, btnGebBanane, btnpommes,btnTintenfischRing,btnGebackenesGemuese;
     private Button btnGebackenesfischfilet,btnMiniFrühlingsrolle, btnGebackeneWantan, btnRindfleischScharf;
     private Button btnSoß_Pikante, btnSoß_Süßsauer,btnSoße_Erdnuss, btnReis, btnSuppe, btnSchoko,btnSchalenklein, btnSchalenGroß, btnUnterlage;
     private TextView txtSesam,txtCurry,txtRind,txtMongolisch,txtSchaleGroß,txtErdnuss, txtUnterlage, btnSchalen_shao,btnOption,txtEnte, txtHähchen, txtHühnerfilet,txtBroccoli, txtSchoko;
@@ -1574,6 +1574,43 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             btnTintenfischRing.setSelected(false);
             btnTintenfischRing.setHovered(true);
             btnTintenfischRing.setBackground(getDrawable(R.drawable.blue_press_berate));
+
+            return true;
+            }
+        });
+//---------------------------------------- Deep-fried vegetables ------------------------------------//
+        btnGebackenesGemuese = (Button) findViewById(R.id.GebackenesGemuese);
+        btnGebackenesGemuese.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick (View v) {
+            if (btnGebackenesGemuese.isActivated()==true){
+                btnGebackenesGemuese.setActivated(false);
+                btnGebackenesGemuese.setSelected(true);
+            }
+            else if (btnGebackenesGemuese.isSelected()==true){
+                btnGebackenesGemuese.setSelected(false);
+            }
+            else if(btnGebackenesGemuese.isHovered()==true)
+            {  btnGebackenesGemuese.setHovered(false);
+                btnGebackenesGemuese.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
+            }
+            else if (btnGebackenesGemuese.getBackground()==getDrawable(R.drawable.blue_press_berate))
+            {
+                btnGebackenesGemuese.setBackground(getDrawable(R.drawable.btn_press_switch_berate));
+            }
+            else {
+                btnGebackenesGemuese.setActivated(true);
+            }
+            }
+        });
+
+        btnGebackenesGemuese.setOnLongClickListener(new View.OnLongClickListener(){
+            public boolean onLongClick(View v){
+            vibrator.vibrate(100);
+            btnGebackenesGemuese.setActivated(false);
+            btnGebackenesGemuese.setSelected(false);
+            btnGebackenesGemuese.setHovered(true);
+            btnGebackenesGemuese.setBackground(getDrawable(R.drawable.blue_press_berate));
 
             return true;
             }
