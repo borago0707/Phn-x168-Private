@@ -1736,11 +1736,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
             }
             else if(btnReis.isHovered()==true)
             {  btnReis.setHovered(false);
-                btnReis.setBackground(getDrawable(R.drawable.btn_extra));
+                btnReis.setBackground(getDrawable(R.drawable.btn_extra_round));
             }
-            else if (btnReis.getBackground()==getDrawable(R.drawable.btn_extra_blue))
+            else if (btnReis.getBackground()==getDrawable(R.drawable.btn_extra_blue_round))
             {
-                btnReis.setBackground(getDrawable(R.drawable.btn_extra_blue));
+                btnReis.setBackground(getDrawable(R.drawable.btn_extra_blue_round));
             }
             else {
                 btnReis.setActivated(true);
@@ -1754,7 +1754,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                 btnReis.setActivated(false);
                 btnReis.setSelected(false);
                 btnReis.setHovered(true);
-                btnReis.setBackground(getDrawable(R.drawable.btn_extra_blue));
+                btnReis.setBackground(getDrawable(R.drawable.btn_extra_blue_round));
 
                 return true;
             }
@@ -1773,11 +1773,11 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                 }
                 else if(btnSuppe.isHovered()==true)
                 {  btnSuppe.setHovered(false);
-                    btnSuppe.setBackground(getDrawable(R.drawable.btn_extra));
+                    btnSuppe.setBackground(getDrawable(R.drawable.btn_extra_round));
                 }
-                else if (btnSuppe.getBackground()==getDrawable(R.drawable.btn_extra_blue))
+                else if (btnSuppe.getBackground()==getDrawable(R.drawable.btn_extra_blue_round))
                 {
-                    btnSuppe.setBackground(getDrawable(R.drawable.btn_extra_blue));
+                    btnSuppe.setBackground(getDrawable(R.drawable.btn_extra_blue_round));
                 }
                 else {
                     btnSuppe.setActivated(true);
@@ -1791,7 +1791,7 @@ btnGebackeneAnanas = (Button) findViewById(R.id.GebackeneAnanas);
                 btnSuppe.setActivated(false);
                 btnSuppe.setSelected(false);
                 btnSuppe.setHovered(true);
-                btnSuppe.setBackground(getDrawable(R.drawable.btn_extra_blue));
+                btnSuppe.setBackground(getDrawable(R.drawable.btn_extra_blue_round));
 
                 return true;
             }
