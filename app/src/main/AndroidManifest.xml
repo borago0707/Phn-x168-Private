@@ -15,6 +15,10 @@
             android:launchMode="standard"
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize|smallestScreenSize|screenLayout">
+            <!-- Preserve the landscape restaurant UI on Android 16 tablets. -->
+            <property
+                android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY"
+                android:value="true" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
