@@ -30,8 +30,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    // AppCompat 1.8.0 and Material 1.14.0 require minSdk 23; keep API 22 support.
     implementation 'androidx.appcompat:appcompat:1.7.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.2'
     implementation 'com.google.android.material:material:1.13.0'
 
     testImplementation 'junit:junit:4.13.2'

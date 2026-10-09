@@ -2,6 +2,8 @@
 
 本项目使用 Gradle 8.14.6、Android Gradle Plugin 8.13.2、构建 JDK 21 和 Android SDK 36。
 
+最低支持 Android 5.1（API 22）。AppCompat 固定为 1.7.1、Material 固定为 1.13.0，ConstraintLayout 使用 2.2.2。AppCompat 1.8.0 和 Material 1.14.0 均要求最低 API 23；如果保留 API 22 支持，不要直接升级到这两个版本，否则会出现 Manifest 合并错误。这与 compile SDK 36 是不同的要求。
+
 ## Android Studio
 
 打开项目并同步 Gradle，选择 `app` 后运行。Gradle JDK 使用 `GRADLE_LOCAL_JAVA_HOME`；它读取本机 `.gradle/config.properties` 中的 `java.home`。当前已配置为 `C:\Users\junji\.jdks\jbr-21.0.11`。
